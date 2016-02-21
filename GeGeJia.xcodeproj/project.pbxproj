@@ -157,9 +157,6 @@
 				D68B19551C79D07D001D6AF9 /* Supporting Files */,
 				D68B19991C79D1C7001D6AF9 /* Utils */,
 				D68B19B71C7A0605001D6AF9 /* Views */,
-				D68B19881C79D107001D6AF9 /* AppDelegate.h */,
-				D68B19891C79D107001D6AF9 /* AppDelegate.m */,
-				D68B19661C79D07D001D6AF9 /* Info.plist */,
 			);
 			path = GeGeJia;
 			sourceTree = "<group>";
@@ -167,7 +164,10 @@
 		D68B19551C79D07D001D6AF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D68B19881C79D107001D6AF9 /* AppDelegate.h */,
+				D68B19891C79D107001D6AF9 /* AppDelegate.m */,
 				D68B19A61C79D26F001D6AF9 /* Images.xcassets */,
+				D68B19661C79D07D001D6AF9 /* Info.plist */,
 				D68B19AE1C79D336001D6AF9 /* InfoPlist.strings */,
 				D68B19B21C79D38E001D6AF9 /* Localizable.strings */,
 				D68B19561C79D07D001D6AF9 /* main.m */,
@@ -229,8 +229,6 @@
 				D68B198D1C79D19D001D6AF9 /* cartViewController.m */,
 				D68B198E1C79D19D001D6AF9 /* homeViewController.h */,
 				D68B198F1C79D19D001D6AF9 /* homeViewController.m */,
-				D68B19B91C7A125F001D6AF9 /* lightColorNavController.h */,
-				D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */,
 				D68B19901C79D19D001D6AF9 /* mallViewController.h */,
 				D68B19911C79D19D001D6AF9 /* mallViewController.m */,
 				D68B19921C79D19D001D6AF9 /* userViewController.h */,
@@ -243,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				D68B19B41C7A0592001D6AF9 /* Main */,
+				D68B19BC1C7A15E8001D6AF9 /* NavController */,
 				D68B198B1C79D144001D6AF9 /* Tabbar */,
 			);
 			path = Controllers;
@@ -260,6 +259,15 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D68B19BC1C7A15E8001D6AF9 /* NavController */ = {
+			isa = PBXGroup;
+			children = (
+				D68B19B91C7A125F001D6AF9 /* lightColorNavController.h */,
+				D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */,
+			);
+			path = NavController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
