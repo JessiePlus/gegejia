@@ -10,4 +10,7 @@
 
 @interface UIColor (Util)
 + (UIColor *)titleColor;
++ (UIColor *)themeColor;
++ (UIColor *)colorWithHex:(int)hexValue alpha:(CGFloat)alpha;
++ (UIColor *)colorWithHex:(int)hexValue;
 @end

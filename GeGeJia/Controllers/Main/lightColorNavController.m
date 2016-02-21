@@ -1,25 +1,27 @@
 //
-//  mainViewController.m
-//  gegejia
+//  lightColorController.m
+//  GeGeJia
 //
 //  Created by dinglin on 16/2/21.
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "homeViewController.h"
+#import "lightColorNavController.h"
 
-@interface homeViewController ()
+@interface lightColorNavController ()
 
 @end
 
-@implementation homeViewController
+@implementation lightColorNavController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor blackColor];
+    [self setNeedsStatusBarAppearanceUpdate];
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

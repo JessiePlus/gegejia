@@ -13,6 +13,7 @@
 #import "userViewController.h"
 #import "tabBarViewController.h"
 #import "Utils.h"
+#import "lightColorNavController.h"
 
 @interface AppDelegate ()
 
@@ -23,14 +24,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    [[UITabBar appearance] setTintColor:[UIColor titleColor]];
+    [[UITabBar appearance] setTintColor:[UIColor titleColor] ];//影响到放在tabbar上的内容的颜色
+    [[UITabBar appearance] setBarTintColor:[UIColor themeColor]];//bar的颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor titleColor]} forState:UIControlStateSelected];//字的颜色
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor themeColor]}];
+    //[[UINavigationBar appearance] setTintColor:[UIColor titleColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor titleColor]];
+    
     // 延迟0.5s
     usleep(500 * 1000);
     
     homeViewController *homeController = [homeViewController new];
-    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
+    lightColorNavController *homeNavController = [[lightColorNavController alloc] initWithRootViewController:homeController];
+
     homeController.tabBarItem.title = LocalizedString(@"home");
     
     UIImage *homeTabImg = [UIImage imageNamed:@"home_normal"];
@@ -67,9 +75,8 @@
     tabBarViewController *tabBarController = [tabBarViewController new];
     tabBarController.viewControllers = @[homeNavController, mallNavController, cartNavController, userNavController];
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setRootViewController:tabBarController];
-    self.window.backgroundColor = [UIColor yellowColor];
-    
     [self.window makeKeyAndVisible];
     
     return YES;

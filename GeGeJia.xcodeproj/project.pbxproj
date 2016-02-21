@@ -23,6 +23,7 @@
 		D68B19A71C79D26F001D6AF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D68B19A61C79D26F001D6AF9 /* Images.xcassets */; };
 		D68B19AC1C79D336001D6AF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19AE1C79D336001D6AF9 /* InfoPlist.strings */; };
 		D68B19B01C79D38E001D6AF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19B21C79D38E001D6AF9 /* Localizable.strings */; };
+		D68B19BB1C7A125F001D6AF9 /* lightColorNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		D68B19AF1C79D377001D6AF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D68B19B11C79D38E001D6AF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D68B19B31C79D396001D6AF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D68B19B91C7A125F001D6AF9 /* lightColorNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lightColorNavController.h; sourceTree = "<group>"; };
+		D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lightColorNavController.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,9 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				D68B19981C79D1AF001D6AF9 /* Catagories */,
+				D68B19B61C7A05BC001D6AF9 /* Controllers */,
+				D68B19B81C7A0611001D6AF9 /* Models */,
 				D68B19551C79D07D001D6AF9 /* Supporting Files */,
-				D68B198B1C79D144001D6AF9 /* Tabbar */,
 				D68B19991C79D1C7001D6AF9 /* Utils */,
+				D68B19B71C7A0605001D6AF9 /* Views */,
 				D68B19881C79D107001D6AF9 /* AppDelegate.h */,
 				D68B19891C79D107001D6AF9 /* AppDelegate.m */,
 				D68B19661C79D07D001D6AF9 /* Info.plist */,
@@ -191,16 +196,8 @@
 		D68B198B1C79D144001D6AF9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				D68B198C1C79D19D001D6AF9 /* cartViewController.h */,
-				D68B198D1C79D19D001D6AF9 /* cartViewController.m */,
-				D68B198E1C79D19D001D6AF9 /* homeViewController.h */,
-				D68B198F1C79D19D001D6AF9 /* homeViewController.m */,
-				D68B19901C79D19D001D6AF9 /* mallViewController.h */,
-				D68B19911C79D19D001D6AF9 /* mallViewController.m */,
 				D68B19A31C79D24B001D6AF9 /* tabBarViewController.h */,
 				D68B19A41C79D24B001D6AF9 /* tabBarViewController.m */,
-				D68B19921C79D19D001D6AF9 /* userViewController.h */,
-				D68B19931C79D19D001D6AF9 /* userViewController.m */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -223,6 +220,46 @@
 				D68B199D1C79D1FC001D6AF9 /* Utils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D68B19B41C7A0592001D6AF9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D68B198C1C79D19D001D6AF9 /* cartViewController.h */,
+				D68B198D1C79D19D001D6AF9 /* cartViewController.m */,
+				D68B198E1C79D19D001D6AF9 /* homeViewController.h */,
+				D68B198F1C79D19D001D6AF9 /* homeViewController.m */,
+				D68B19B91C7A125F001D6AF9 /* lightColorNavController.h */,
+				D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */,
+				D68B19901C79D19D001D6AF9 /* mallViewController.h */,
+				D68B19911C79D19D001D6AF9 /* mallViewController.m */,
+				D68B19921C79D19D001D6AF9 /* userViewController.h */,
+				D68B19931C79D19D001D6AF9 /* userViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D68B19B61C7A05BC001D6AF9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D68B19B41C7A0592001D6AF9 /* Main */,
+				D68B198B1C79D144001D6AF9 /* Tabbar */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D68B19B71C7A0605001D6AF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D68B19B81C7A0611001D6AF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +450,7 @@
 				D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D68B19BB1C7A125F001D6AF9 /* lightColorNavController.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
 				D68B19A51C79D24B001D6AF9 /* tabBarViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
