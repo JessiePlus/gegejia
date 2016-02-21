@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  gegejia
+
+  Created by dinglin on 16/2/21.
+  Copyright © 2016年 dinglin. All rights reserved.
+*/
+
+//TabBar
+"home"="首页";
+"mall"="商城";
+"cart"="购物车";
+"user"="我的";
