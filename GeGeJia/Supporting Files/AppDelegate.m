@@ -30,7 +30,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor titleColor]} forState:UIControlStateSelected];//字的颜色
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor themeColor]}];
-    //[[UINavigationBar appearance] setTintColor:[UIColor titleColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor themeColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor titleColor]];
     
     // 延迟0.5s
@@ -48,7 +48,7 @@
     
     
     mallViewController *mallController = [mallViewController new];
-    UINavigationController *mallNavController = [[UINavigationController alloc] initWithRootViewController:mallController];
+    lightColorNavController *mallNavController = [[lightColorNavController alloc] initWithRootViewController:mallController];
     mallController.tabBarItem.title = LocalizedString(@"mall");
     UIImage *mallTabImg = [UIImage imageNamed:@"mall_normal"];
     UIImage *mallTabSelectedImg = [UIImage imageNamed:@"mall_selected"];
@@ -56,7 +56,7 @@
     mallController.tabBarItem.selectedImage = mallTabSelectedImg;
     
     cartViewController *cartController = [cartViewController new];
-    UINavigationController *cartNavController = [[UINavigationController alloc] initWithRootViewController:cartController];
+    lightColorNavController *cartNavController = [[lightColorNavController alloc] initWithRootViewController:cartController];
     cartController.tabBarItem.title = LocalizedString(@"cart");
     UIImage *cartTabImg = [UIImage imageNamed:@"cart_normal"];
     UIImage *cartTabSelectedImg = [UIImage imageNamed:@"cart_selected"];
@@ -65,7 +65,7 @@
     
     
     userViewController *userController = [userViewController new];
-    UINavigationController *userNavController = [[UINavigationController alloc] initWithRootViewController:userController];
+    lightColorNavController *userNavController = [[lightColorNavController alloc] initWithRootViewController:userController];
     userController.tabBarItem.title = LocalizedString(@"user");
     UIImage *userTabImg = [UIImage imageNamed:@"user_normal"];
     UIImage *userTabSelectedImg = [UIImage imageNamed:@"user_selected"];

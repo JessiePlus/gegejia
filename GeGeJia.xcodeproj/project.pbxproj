@@ -24,6 +24,11 @@
 		D68B19AC1C79D336001D6AF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19AE1C79D336001D6AF9 /* InfoPlist.strings */; };
 		D68B19B01C79D38E001D6AF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19B21C79D38E001D6AF9 /* Localizable.strings */; };
 		D68B19BB1C7A125F001D6AF9 /* lightColorNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */; };
+		D68B19BE1C7AA5E2001D6AF9 /* ProvinceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D68B19BD1C7AA5E2001D6AF9 /* ProvinceList.plist */; };
+		D68B19C21C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19C11C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m */; };
+		D68B19D51C7B48C6001D6AF9 /* homePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19D41C7B48C6001D6AF9 /* homePageTableViewController.m */; };
+		D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */; };
+		D68B19E01C7B5CB9001D6AF9 /* titleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19DF1C7B5CB9001D6AF9 /* titleCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,15 @@
 		D68B19B31C79D396001D6AF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D68B19B91C7A125F001D6AF9 /* lightColorNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lightColorNavController.h; sourceTree = "<group>"; };
 		D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lightColorNavController.m; sourceTree = "<group>"; };
+		D68B19BD1C7AA5E2001D6AF9 /* ProvinceList.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ProvinceList.plist; sourceTree = "<group>"; };
+		D68B19C01C7AFB0D001D6AF9 /* HorizonalCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonalCollectionViewController.h; sourceTree = "<group>"; };
+		D68B19C11C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonalCollectionViewController.m; sourceTree = "<group>"; };
+		D68B19D31C7B48C6001D6AF9 /* homePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homePageTableViewController.h; sourceTree = "<group>"; };
+		D68B19D41C7B48C6001D6AF9 /* homePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homePageTableViewController.m; sourceTree = "<group>"; };
+		D68B19D61C7B48E1001D6AF9 /* foodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foodTableViewController.h; sourceTree = "<group>"; };
+		D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foodTableViewController.m; sourceTree = "<group>"; };
+		D68B19DE1C7B5CB9001D6AF9 /* titleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleCollectionViewController.h; sourceTree = "<group>"; };
+		D68B19DF1C7B5CB9001D6AF9 /* titleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleCollectionViewController.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +171,7 @@
 				D68B19551C79D07D001D6AF9 /* Supporting Files */,
 				D68B19991C79D1C7001D6AF9 /* Utils */,
 				D68B19B71C7A0605001D6AF9 /* Views */,
+				D68B19661C79D07D001D6AF9 /* Info.plist */,
 			);
 			path = GeGeJia;
 			sourceTree = "<group>";
@@ -167,9 +182,9 @@
 				D68B19881C79D107001D6AF9 /* AppDelegate.h */,
 				D68B19891C79D107001D6AF9 /* AppDelegate.m */,
 				D68B19A61C79D26F001D6AF9 /* Images.xcassets */,
-				D68B19661C79D07D001D6AF9 /* Info.plist */,
 				D68B19AE1C79D336001D6AF9 /* InfoPlist.strings */,
 				D68B19B21C79D38E001D6AF9 /* Localizable.strings */,
+				D68B19BD1C7AA5E2001D6AF9 /* ProvinceList.plist */,
 				D68B19561C79D07D001D6AF9 /* main.m */,
 			);
 			path = "Supporting Files";
@@ -240,6 +255,8 @@
 		D68B19B61C7A05BC001D6AF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D68B19D21C7B4840001D6AF9 /* Home */,
+				D68B19BF1C7AAE8B001D6AF9 /* Horizonal */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B19BC1C7A15E8001D6AF9 /* NavController */,
 				D68B198B1C79D144001D6AF9 /* Tabbar */,
@@ -268,6 +285,28 @@
 				D68B19BA1C7A125F001D6AF9 /* lightColorNavController.m */,
 			);
 			path = NavController;
+			sourceTree = "<group>";
+		};
+		D68B19BF1C7AAE8B001D6AF9 /* Horizonal */ = {
+			isa = PBXGroup;
+			children = (
+				D68B19C01C7AFB0D001D6AF9 /* HorizonalCollectionViewController.h */,
+				D68B19C11C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m */,
+				D68B19DE1C7B5CB9001D6AF9 /* titleCollectionViewController.h */,
+				D68B19DF1C7B5CB9001D6AF9 /* titleCollectionViewController.m */,
+			);
+			path = Horizonal;
+			sourceTree = "<group>";
+		};
+		D68B19D21C7B4840001D6AF9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D68B19D61C7B48E1001D6AF9 /* foodTableViewController.h */,
+				D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */,
+				D68B19D31C7B48C6001D6AF9 /* homePageTableViewController.h */,
+				D68B19D41C7B48C6001D6AF9 /* homePageTableViewController.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +421,7 @@
 			files = (
 				D68B19A71C79D26F001D6AF9 /* Images.xcassets in Resources */,
 				D68B19B01C79D38E001D6AF9 /* Localizable.strings in Resources */,
+				D68B19BE1C7AA5E2001D6AF9 /* ProvinceList.plist in Resources */,
 				D68B19AC1C79D336001D6AF9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,11 +498,15 @@
 				D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D68B19C21C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m in Sources */,
+				D68B19D51C7B48C6001D6AF9 /* homePageTableViewController.m in Sources */,
 				D68B19BB1C7A125F001D6AF9 /* lightColorNavController.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
+				D68B19E01C7B5CB9001D6AF9 /* titleCollectionViewController.m in Sources */,
 				D68B19A51C79D24B001D6AF9 /* tabBarViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
 				D68B19971C79D19D001D6AF9 /* userViewController.m in Sources */,
+				D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* homeViewController.m in Sources */,
 				D68B19961C79D19D001D6AF9 /* mallViewController.m in Sources */,
