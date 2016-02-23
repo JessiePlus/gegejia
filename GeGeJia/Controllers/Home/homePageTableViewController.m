@@ -7,6 +7,7 @@
 //
 
 #import "homePageTableViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface homePageTableViewController ()
 
@@ -24,6 +25,23 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:homePageTableViewCellReuseIdentifier];
+    __unsafe_unretained UITableView *tableView = self.tableView;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 结束刷新
+            [tableView.mj_header endRefreshing];
+        });
+    }];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 结束刷新
+            [tableView.mj_footer endRefreshing];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

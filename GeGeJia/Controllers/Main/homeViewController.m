@@ -91,7 +91,7 @@
         make.top.equalTo(_titleController.collectionView.mas_bottom);
         make.left.equalTo(self.view.mas_left);
         make.width.equalTo(@375);
-        make.height.equalTo(@400);
+        make.bottom.equalTo(self.view.mas_bottom);
     }];
 }
 
