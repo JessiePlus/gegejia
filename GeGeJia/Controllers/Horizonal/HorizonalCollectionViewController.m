@@ -7,6 +7,7 @@
 //
 
 #import "HorizonalCollectionViewController.h"
+#import <Masonry/Masonry.h>
 
 @interface HorizonalCollectionViewController () {
     NSArray *_controllers;
@@ -53,6 +54,12 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
 
 #pragma mark <UICollectionViewDataSource>
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%li", (long)indexPath.section);
+    self.changeIndex(indexPath.section);
+    
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return _controllers.count;
 }
@@ -84,8 +91,11 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
 //    }
 
     UITableViewController *controller = _controllers[indexPath.section];
-    controller.view.frame = cell.contentView.bounds;
     [cell.contentView addSubview:controller.view];
+    
+    [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell.contentView);
+    }];
     
     return cell;
 }

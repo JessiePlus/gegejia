@@ -7,6 +7,7 @@
 //
 
 #import "titleCollectionViewController.h"
+#import <Masonry/Masonry.h>
 
 @interface titleCollectionViewController (){
     NSArray *_titles;
@@ -33,6 +34,7 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier];
     
     // Do any additional setup after loading the view.
+    self.collectionView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,16 +67,26 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor yellowColor];
-    view.frame = cell.contentView.bounds;
-    [cell.contentView addSubview:view];
+    
+    UILabel *label = [UILabel new];
+    [label setText:_titles[indexPath.section]];
+    label.backgroundColor = [UIColor orangeColor];
+    [cell.contentView addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell.contentView);
+    }];
+    
     
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%li", (long)indexPath.section);
+    self.changeIndex(indexPath.section);
+    
+}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
