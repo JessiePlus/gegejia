@@ -16,6 +16,7 @@
 #import "finallySnappedTableViewController.h"
 #import "rightAwayTableViewController.h"
 #import <Masonry/Masonry.h>
+#import "Utils.h"
 
 @interface homeViewController () {
     HorizonalCollectionViewController *_horizonalController;
@@ -33,7 +34,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navItemSearch"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSearchViewController)];
     
     UICollectionViewFlowLayout *horizonalflowLayout = [UICollectionViewFlowLayout new];
-    horizonalflowLayout.itemSize = CGSizeMake(375, self.view.frame.size.height - 20 - 44 - 80 - 40);
+    horizonalflowLayout.itemSize = CGSizeMake(375, self.view.frame.size.height - 20 - 44 - 40 - 40);
     horizonalflowLayout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
     horizonalflowLayout.minimumInteritemSpacing = 0.0f;
     horizonalflowLayout.minimumLineSpacing      = 0.0f;
@@ -44,7 +45,7 @@
     
     
     UICollectionViewFlowLayout *titleflowLayout = [UICollectionViewFlowLayout new];
-    titleflowLayout.itemSize = CGSizeMake(80, 80);
+    titleflowLayout.itemSize = CGSizeMake(80, 40);
     titleflowLayout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
     titleflowLayout.minimumInteritemSpacing = 0.0f;
     titleflowLayout.minimumLineSpacing      = 0.0f;
@@ -73,20 +74,19 @@
     
     _horizonalController.changeIndex = ^(NSUInteger index) {
         [weakTitleController.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
-    };
-    self.view.backgroundColor = [UIColor grayColor];
-    
+    };    
     
     [self.view addSubview:_horizonalController.collectionView];
     [self.view addSubview:_titleController.collectionView];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = [UIColor themeColor];
     
     [_titleController.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(64);
         make.left.equalTo(self.view.mas_left);
         make.width.equalTo(@375);
-        make.height.equalTo(@80);
+        make.height.equalTo(@40);
     }];
 
     [_horizonalController.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,6 +96,8 @@
         make.bottom.equalTo(self.view.mas_bottom).offset(-40);
     }];
 }
+
+
 
 #pragma mark - 处理左右navigationItem点击事件
 

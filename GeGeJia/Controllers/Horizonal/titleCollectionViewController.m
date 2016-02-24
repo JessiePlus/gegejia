@@ -9,6 +9,7 @@
 #import "titleCollectionViewController.h"
 #import "titleCollectionViewCell.h"
 #import <Masonry/Masonry.h>
+#import "Utils.h"
 
 @interface titleCollectionViewController (){
     NSArray *_titles;
@@ -36,8 +37,8 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
     
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.backgroundColor = [UIColor themeColor];
 }
 
 - (void)didReceiveMemoryWarning {

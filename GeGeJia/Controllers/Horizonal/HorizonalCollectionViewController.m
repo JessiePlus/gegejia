@@ -8,6 +8,7 @@
 
 #import "HorizonalCollectionViewController.h"
 #import <Masonry/Masonry.h>
+#import "Utils.h"
 
 @interface HorizonalCollectionViewController () {
     NSArray *_controllers;
@@ -35,7 +36,8 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.collectionView.backgroundColor = [UIColor themeColor];
+
 }
 
 - (void)didReceiveMemoryWarning {
