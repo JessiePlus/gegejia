@@ -7,11 +7,11 @@
 //
 
 #import "titleCollectionViewController.h"
+#import "titleCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 
 @interface titleCollectionViewController (){
     NSArray *_titles;
-    UICollectionViewCell *_currentCell;
 }
 
 @end
@@ -32,10 +32,12 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier];
+    [self.collectionView registerClass:[titleCollectionViewCell class] forCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier];
     
     // Do any additional setup after loading the view.
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.pagingEnabled = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,32 +67,17 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier forIndexPath:indexPath];
+    titleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:titleCollectionViewCellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    cell.title = _titles[indexPath.section];
     
-    UILabel *label = [UILabel new];
-    [label setText:_titles[indexPath.section]];
-    label.backgroundColor = [UIColor orangeColor];
-    [cell.contentView addSubview:label];
-    
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(cell.contentView);
-    }];
-    
-    _currentCell = cell;
     return cell;
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.bounds));
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.frame));
-}
 
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%li", (long)indexPath.section);
     self.changeIndex(indexPath.section);
     
 }

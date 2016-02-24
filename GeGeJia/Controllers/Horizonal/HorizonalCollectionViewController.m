@@ -11,7 +11,6 @@
 
 @interface HorizonalCollectionViewController () {
     NSArray *_controllers;
-    UICollectionViewCell *_currentCell;
 }
 
 @end
@@ -36,11 +35,7 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
-}
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.bounds));
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.frame));
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,11 +52,15 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     // Pass the selected object to the new view controller.
 }
 */
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    
+//    return self.collectionView.frame.size;
+//}
 
 #pragma mark <UICollectionViewDataSource>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%li", (long)indexPath.section);
     self.changeIndex(indexPath.section);
     
 }
@@ -79,30 +78,15 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:horizonalCollectionViewCellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-//    switch (indexPath.section) {
-//        case 0:
-//            cell.backgroundColor = [UIColor whiteColor];
-//            break;
-//        case 1:
-//            cell.backgroundColor = [UIColor blueColor];
-//            break;
-//        case 2:
-//            cell.backgroundColor = [UIColor redColor];
-//            break;
-//        case 3:
-//            cell.backgroundColor = [UIColor purpleColor];
-//            break;
-//        default:
-//            break;
-//    }
 
+    //因为这里的controller.tableView不是每次都new的，而且每个视图都只有一个父视图，所以不会积累起来。
     UITableViewController *controller = _controllers[indexPath.section];
     [cell.contentView addSubview:controller.tableView];
     
     [controller.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell.contentView);
     }];
-    _currentCell = cell;
+    
     return cell;
 }
 

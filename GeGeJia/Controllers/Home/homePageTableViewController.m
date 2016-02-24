@@ -18,7 +18,7 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -42,12 +42,6 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
             [tableView.mj_footer endRefreshing];
         });
     }];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(self.tableView.bounds));
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(self.tableView.frame));
 }
 
 - (void)didReceiveMemoryWarning {

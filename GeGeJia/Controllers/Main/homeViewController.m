@@ -33,8 +33,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navItemSearch"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSearchViewController)];
     
     UICollectionViewFlowLayout *horizonalflowLayout = [UICollectionViewFlowLayout new];
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(self.view.frame));
-    horizonalflowLayout.itemSize = CGSizeMake(375, self.view.frame.size.height - 44 - 80 - 40);
+    horizonalflowLayout.itemSize = CGSizeMake(375, self.view.frame.size.height - 20 - 44 - 80 - 40);
     horizonalflowLayout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
     horizonalflowLayout.minimumInteritemSpacing = 0.0f;
     horizonalflowLayout.minimumLineSpacing      = 0.0f;
@@ -84,7 +83,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [_titleController.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //make.top.equalTo(self.navigationController.navigationBar.mas_bottom);
         make.top.equalTo(self.view.mas_top).offset(64);
         make.left.equalTo(self.view.mas_left);
         make.width.equalTo(@375);
@@ -96,20 +94,9 @@
         make.left.equalTo(self.view.mas_left);
         make.width.equalTo(@375);
         make.bottom.equalTo(self.view.mas_bottom).offset(-40);
-        //make.height.equalTo(@400);
     }];
 }
 
-
--(void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_titleController.collectionView.bounds));
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_titleController.collectionView.frame));
-    
-    
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_horizonalController.collectionView.bounds));
-    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_horizonalController.collectionView.frame));
-}
 #pragma mark - 处理左右navigationItem点击事件
 
 - (void)pushSearchViewController

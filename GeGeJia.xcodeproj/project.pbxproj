@@ -33,6 +33,7 @@
 		D68B19E61C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E51C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m */; };
 		D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E81C7C8AAB001D6AF9 /* finallySnappedTableViewController.m */; };
 		D68B19EC1C7C8B23001D6AF9 /* rightAwayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19EB1C7C8B23001D6AF9 /* rightAwayTableViewController.m */; };
+		D68B19F01C7D8491001D6AF9 /* titleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19EF1C7D8491001D6AF9 /* titleCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		D68B19E81C7C8AAB001D6AF9 /* finallySnappedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = finallySnappedTableViewController.m; sourceTree = "<group>"; };
 		D68B19EA1C7C8B23001D6AF9 /* rightAwayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rightAwayTableViewController.h; sourceTree = "<group>"; };
 		D68B19EB1C7C8B23001D6AF9 /* rightAwayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rightAwayTableViewController.m; sourceTree = "<group>"; };
+		D68B19EE1C7D8491001D6AF9 /* titleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleCollectionViewCell.h; sourceTree = "<group>"; };
+		D68B19EF1C7D8491001D6AF9 /* titleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleCollectionViewCell.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +307,8 @@
 			children = (
 				D68B19C01C7AFB0D001D6AF9 /* HorizonalCollectionViewController.h */,
 				D68B19C11C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m */,
+				D68B19EE1C7D8491001D6AF9 /* titleCollectionViewCell.h */,
+				D68B19EF1C7D8491001D6AF9 /* titleCollectionViewCell.m */,
 				D68B19DE1C7B5CB9001D6AF9 /* titleCollectionViewController.h */,
 				D68B19DF1C7B5CB9001D6AF9 /* titleCollectionViewController.m */,
 			);
@@ -524,6 +529,7 @@
 				D68B19BB1C7A125F001D6AF9 /* lightColorNavController.m in Sources */,
 				D68B19EC1C7C8B23001D6AF9 /* rightAwayTableViewController.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
+				D68B19F01C7D8491001D6AF9 /* titleCollectionViewCell.m in Sources */,
 				D68B19E01C7B5CB9001D6AF9 /* titleCollectionViewController.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */,
 				D68B19A51C79D24B001D6AF9 /* tabBarViewController.m in Sources */,
