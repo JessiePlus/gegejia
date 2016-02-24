@@ -8,6 +8,7 @@
 
 #import "homePageTableViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import "pageControlTableViewCell.h"
 
 @interface homePageTableViewController ()
 
@@ -15,6 +16,8 @@
 
 @implementation homePageTableViewController
 static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
+static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlCell";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +28,11 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:homePageTableViewCellReuseIdentifier];
+    [self.tableView registerClass:[pageControlTableViewCell class] forCellReuseIdentifier:pageControlTableViewCellReuseIdentifier];
+    
+    
+    
+    
     __unsafe_unretained UITableView *tableView = self.tableView;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
@@ -64,7 +72,7 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:pageControlTableViewCellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     switch (indexPath.row) {
