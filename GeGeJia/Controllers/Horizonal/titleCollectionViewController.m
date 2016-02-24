@@ -11,6 +11,7 @@
 
 @interface titleCollectionViewController (){
     NSArray *_titles;
+    UICollectionViewCell *_currentCell;
 }
 
 @end
@@ -77,8 +78,14 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
         make.edges.equalTo(cell.contentView);
     }];
     
-    
+    _currentCell = cell;
     return cell;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.bounds));
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.frame));
 }
 
 #pragma mark <UICollectionViewDelegate>

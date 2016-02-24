@@ -11,6 +11,7 @@
 
 @interface HorizonalCollectionViewController () {
     NSArray *_controllers;
+    UICollectionViewCell *_currentCell;
 }
 
 @end
@@ -35,6 +36,11 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.bounds));
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(_currentCell.frame));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,14 +97,17 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
 //    }
 
     UITableViewController *controller = _controllers[indexPath.section];
-    [cell.contentView addSubview:controller.view];
+    [cell.contentView addSubview:controller.tableView];
     
-    [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
+    [controller.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell.contentView);
     }];
-    
+    _currentCell = cell;
     return cell;
 }
+
+
+
 
 #pragma mark <UICollectionViewDelegate>
 

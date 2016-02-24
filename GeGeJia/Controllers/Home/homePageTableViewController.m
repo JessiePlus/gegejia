@@ -44,6 +44,12 @@ static NSString * const homePageTableViewCellReuseIdentifier = @"homePageCell";
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(self.tableView.bounds));
+    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(self.tableView.frame));
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
