@@ -8,10 +8,13 @@
 
 #import "homePageTableViewController.h"
 #import <MJRefresh/MJRefresh.h>
-#import "pageControlTableViewCell.h"
+#import "PageScrollViewController.h"
+#import <Masonry/Masonry.h>
 
-@interface homePageTableViewController ()
 
+@interface homePageTableViewController () {
+    PageScrollViewController *_pageScrollController;
+}
 @end
 
 @implementation homePageTableViewController
@@ -21,15 +24,20 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:homePageTableViewCellReuseIdentifier];
-    [self.tableView registerClass:[pageControlTableViewCell class] forCellReuseIdentifier:pageControlTableViewCellReuseIdentifier];
+    //[self.tableView registerClass:[pageControlTableViewCell class] forCellReuseIdentifier:pageControlTableViewCellReuseIdentifier];
     
+    
+    _pageScrollController = [PageScrollViewController new];
+    
+    
+
     
     
     
@@ -98,12 +106,14 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell...
     UITableViewCell *cell;
-    switch (indexPath.section) {
-        case 0:
-            cell = [tableView dequeueReusableCellWithIdentifier:pageControlTableViewCellReuseIdentifier forIndexPath:indexPath];
-            
-            break;
-        case 1:
+    
+    if (indexPath.section == 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+            [cell.contentView addSubview:_pageScrollController.view];
+            [_pageScrollController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(cell.contentView);
+            }];
+    } else if (indexPath.section == 1) {
             cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
             switch (indexPath.row) {
                 case 0:
@@ -122,9 +132,6 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
                     cell.backgroundColor = [UIColor purpleColor];
                     break;
             }
-            break;
-        default:
-            break;
     }
 
     return cell;

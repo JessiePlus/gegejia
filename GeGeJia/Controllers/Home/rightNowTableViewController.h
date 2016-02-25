@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface rightAwayTableViewController : UITableViewController
+@interface rightNowTableViewController : UITableViewController
 
 @end

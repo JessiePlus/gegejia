@@ -1,5 +1,5 @@
 //
-//  UICollectionView+TouchEnabled.h
+//  PageScrollViewController.h
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICollectionView (TouchEnabled)
+@interface PageScrollViewController : UIViewController
 
 @end

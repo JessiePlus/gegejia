@@ -6,13 +6,13 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "rightAwayTableViewController.h"
+#import "rightNowTableViewController.h"
 
-@interface rightAwayTableViewController ()
+@interface rightNowTableViewController ()
 
 @end
 
-@implementation rightAwayTableViewController
+@implementation rightNowTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

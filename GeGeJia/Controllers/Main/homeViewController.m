@@ -14,7 +14,7 @@
 #import "tonicTableViewController.h"
 #import "maternalAndChildTableViewController.h"
 #import "finallySnappedTableViewController.h"
-#import "rightAwayTableViewController.h"
+#import "rightNowTableViewController.h"
 #import <Masonry/Masonry.h>
 #import "Utils.h"
 
@@ -57,7 +57,7 @@
     tonicTableViewController *tonicController = [tonicTableViewController new];
     maternalAndChildTableViewController *maternalAndChildController = [maternalAndChildTableViewController new];
     finallySnappedTableViewController *finallySnappedController = [finallySnappedTableViewController new];
-    rightAwayTableViewController *rightAwayController = [rightAwayTableViewController new];
+    rightNowTableViewController *rightAwayController = [rightNowTableViewController new];
     
     NSArray *titles = @[@"首页", @"休闲零食", @"保健滋补", @"母婴健康", @"最后疯抢", @"即将开抢"];
     NSArray *controllers = @[homePageController, foodController, tonicController, maternalAndChildController, finallySnappedController, rightAwayController];
