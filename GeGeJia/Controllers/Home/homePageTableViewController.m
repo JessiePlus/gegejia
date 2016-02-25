@@ -9,6 +9,7 @@
 #import "homePageTableViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import "pageControlTableViewCell.h"
+#import "UITableView+Touch.h"
 
 @interface homePageTableViewController ()
 
@@ -60,39 +61,73 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    NSUInteger n = 0;
+    switch (section) {
+        case 0:
+            n = 1;
+            break;
+        case 1:
+            n = 3;
+            break;
+        default:
+            n = 0;
+            break;
+    }
+    return n;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 30;
+    NSUInteger height = 40;
+    switch (indexPath.section) {
+        case 0:
+            height = 100;
+            break;
+        case 1:
+            height = 40;
+            break;
+        default:
+            height = 40;
+            break;
+    }
+    return height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:pageControlTableViewCellReuseIdentifier forIndexPath:indexPath];
-    
     // Configure the cell...
-    switch (indexPath.row) {
+    UITableViewCell *cell;
+    switch (indexPath.section) {
         case 0:
-            cell.backgroundColor = [UIColor whiteColor];
+            cell = [tableView dequeueReusableCellWithIdentifier:pageControlTableViewCellReuseIdentifier forIndexPath:indexPath];
+            
             break;
         case 1:
-            cell.backgroundColor = [UIColor blueColor];
-            break;
-        case 2:
-            cell.backgroundColor = [UIColor redColor];
-            break;
-        case 3:
-            cell.backgroundColor = [UIColor purpleColor];
+            cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+            switch (indexPath.row) {
+                case 0:
+                    cell.backgroundColor = [UIColor whiteColor];
+                    break;
+                case 1:
+                    cell.backgroundColor = [UIColor blueColor];
+                    break;
+                case 2:
+                    cell.backgroundColor = [UIColor redColor];
+                    break;
+                case 3:
+                    cell.backgroundColor = [UIColor purpleColor];
+                    break;
+                default:
+                    cell.backgroundColor = [UIColor purpleColor];
+                    break;
+            }
             break;
         default:
-            cell.backgroundColor = [UIColor purpleColor];
             break;
     }
-    
+
     return cell;
 }
 

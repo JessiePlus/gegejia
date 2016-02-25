@@ -38,6 +38,7 @@ static NSString * const titleCollectionViewCellReuseIdentifier = @"titleCell";
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.bounces = NO;
     self.collectionView.backgroundColor = [UIColor themeColor];
 }
 

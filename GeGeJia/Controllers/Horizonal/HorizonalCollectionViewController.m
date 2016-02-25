@@ -9,6 +9,7 @@
 #import "HorizonalCollectionViewController.h"
 #import <Masonry/Masonry.h>
 #import "Utils.h"
+#import "UICollectionView+TouchEnabled.h"
 
 @interface HorizonalCollectionViewController () {
     NSArray *_controllers;
@@ -36,8 +37,10 @@ static NSString * const horizonalCollectionViewCellReuseIdentifier = @"horizonal
     
     // Do any additional setup after loading the view.
     self.collectionView.pagingEnabled = YES;
+    self.collectionView.bounces = NO;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor themeColor];
-
+    self.collectionView.userInteractionEnabled = YES;
 }
 
 - (void)didReceiveMemoryWarning {
