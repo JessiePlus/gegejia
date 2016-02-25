@@ -9,7 +9,6 @@
 #import "homePageTableViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import "pageControlTableViewCell.h"
-#import "UITableView+Touch.h"
 
 @interface homePageTableViewController ()
 

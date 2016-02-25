@@ -42,6 +42,8 @@
     
     UIScrollView *scrollView = [UIScrollView new];
     scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.backgroundColor = [UIColor greenColor];
     
     UIImageView *picture1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll1.png"]];
@@ -66,10 +68,9 @@
     [self.contentView addSubview:scrollView];
     [self.contentView addSubview:pageControl];
    
-    scrollView.frame = picture1.frame;
-//    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.contentView);
-//    }];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
     [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView.mas_centerX);
         make.bottom.equalTo(self.contentView.mas_bottom);

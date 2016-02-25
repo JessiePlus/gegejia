@@ -37,7 +37,6 @@
 		D68B19F61C7E0A12001D6AF9 /* pageControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19F51C7E0A12001D6AF9 /* pageControlTableViewCell.m */; };
 		D68B19FC1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19FB1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.m */; };
 		D68B19FF1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19FE1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.m */; };
-		D68B1A021C7ED8E1001D6AF9 /* UITableView+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A011C7ED8E1001D6AF9 /* UITableView+Touch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +118,6 @@
 		D68B19FB1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+TouchEnabled.m"; sourceTree = "<group>"; };
 		D68B19FD1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TouchEvent.h"; sourceTree = "<group>"; };
 		D68B19FE1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TouchEvent.m"; sourceTree = "<group>"; };
-		D68B1A001C7ED8E1001D6AF9 /* UITableView+Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Touch.h"; sourceTree = "<group>"; };
-		D68B1A011C7ED8E1001D6AF9 /* UITableView+Touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Touch.m"; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -321,8 +318,6 @@
 				D68B19C11C7AFB0D001D6AF9 /* HorizonalCollectionViewController.m */,
 				D68B19FA1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.h */,
 				D68B19FB1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.m */,
-				D68B1A001C7ED8E1001D6AF9 /* UITableView+Touch.h */,
-				D68B1A011C7ED8E1001D6AF9 /* UITableView+Touch.m */,
 				D68B19FD1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.h */,
 				D68B19FE1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.m */,
 				D68B19EE1C7D8491001D6AF9 /* titleCollectionViewCell.h */,
@@ -561,7 +556,6 @@
 				D68B19F61C7E0A12001D6AF9 /* pageControlTableViewCell.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* homeViewController.m in Sources */,
 				D68B19961C79D19D001D6AF9 /* mallViewController.m in Sources */,
-				D68B1A021C7ED8E1001D6AF9 /* UITableView+Touch.m in Sources */,
 				D68B19FF1C7ED3C7001D6AF9 /* UIScrollView+TouchEvent.m in Sources */,
 				D68B19FC1C7ED294001D6AF9 /* UICollectionView+TouchEnabled.m in Sources */,
 			);
