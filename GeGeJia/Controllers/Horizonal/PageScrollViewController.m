@@ -8,6 +8,7 @@
 
 #import "PageScrollViewController.h"
 #import <Masonry/masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define kTimeInterval 2.0f
 
@@ -38,7 +39,8 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.contentOffset = CGPointMake(375, 0);
     
-    UIImageView *picture0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll3.png"]];
+    UIImageView *picture0 = [UIImageView new];
+    [picture0 sd_setImageWithURL:[NSURL URLWithString:@"http://tse2.mm.bing.net/th?id=OIP.Mc6bfaa79b619eb8176fc7210c1237961o0&w=241&h=154&c=7&rs=1&qlt=90&o=4&pid=1.1"]];
     UIImageView *picture1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll1.png"]];
     UIImageView *picture2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll2.png"]];
     UIImageView *picture3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll3.png"]];
@@ -165,22 +167,36 @@
     return _timer.isValid;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if (self.isAutoPaging) {
+        [self stopTimer];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.isAutoPaging) {
+        [self startTimer];
+    }
+}
 //3个问题：1.currentOffsetX有时候不是375倍数，2.要把改变currentPage写进动画，3.不能下拉。
 - (void)nextPage
 {
-    NSLog(@"%d, %f", __LINE__, _scrollView.contentOffset.x);
+    //NSLog(@"%d, %f", __LINE__, _scrollView.contentOffset.x);
     
     CGFloat currentOffsetX = _scrollView.contentOffset.x;
     if(currentOffsetX ==0.0f){
-        [_scrollView  setContentOffset:CGPointMake(375*3, 0) animated:NO];
         _pageControl.currentPage = 2;
+        [_scrollView  setContentOffset:CGPointMake(375*3, 0) animated:NO];
     }else if(currentOffsetX == 375*4){
-        [_scrollView  setContentOffset:CGPointMake(375, 0) animated:NO];
         _pageControl.currentPage = 0;
+        [_scrollView  setContentOffset:CGPointMake(375, 0) animated:NO];
         
     } else {
-        [_scrollView setContentOffset:CGPointMake(currentOffsetX +375, 0) animated:YES];
         _pageControl.currentPage = currentOffsetX/375 - 1;
+        [_scrollView setContentOffset:CGPointMake(_pageControl.currentPage*375, 0) animated:YES];
+        
     }
 }
 

@@ -10,11 +10,15 @@
 #import <MJRefresh/MJRefresh.h>
 #import "PageScrollViewController.h"
 #import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 @interface homePageTableViewController () {
-    PageScrollViewController *_pageScrollController;
+    
 }
+@property (nonatomic, strong) PageScrollViewController *pageScrollController;
+@property (nonatomic, strong) UIImageView *leftImg, *rightImg;
+@property (nonatomic, strong) UIImageView *shareImg;
 @end
 
 @implementation homePageTableViewController
@@ -36,7 +40,12 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
     
     _pageScrollController = [PageScrollViewController new];
     
-    
+    _leftImg = [UIImageView new];
+    _leftImg.contentMode = UIViewContentModeScaleToFill;
+    [_leftImg sd_setImageWithURL:[ NSURL URLWithString:@"http://tse1.mm.bing.net/th?&id=OIP.M997ba31bb6fdfe35a86fcf4eec916937o0&w=300&h=200&c=0&pid=1.9&rs=0&p=0"]];
+    _rightImg = [UIImageView new];
+    _rightImg.contentMode = UIViewContentModeScaleToFill;
+    [_rightImg sd_setImageWithURL:[ NSURL URLWithString:@"http://tse1.mm.bing.net/th?&id=OIP.Mb7b6a331f3031110a8bbf5b40662a582o0&w=300&h=200&c=0&pid=1.9&rs=0&p=0"]];
 
     
     
@@ -68,7 +77,7 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -78,6 +87,9 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
             n = 1;
             break;
         case 1:
+            n = 1;
+            break;
+        case 2:
             n = 3;
             break;
         default:
@@ -108,13 +120,32 @@ static NSString * const pageControlTableViewCellReuseIdentifier = @"pageControlC
     UITableViewCell *cell;
     
     if (indexPath.section == 0) {
-            cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
-            [cell.contentView addSubview:_pageScrollController.view];
-            [_pageScrollController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(cell.contentView);
+        cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+        [cell.contentView addSubview:_pageScrollController.view];
+        [_pageScrollController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(cell.contentView);
             }];
     } else if (indexPath.section == 1) {
-            cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+        cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
+        cell.contentView.backgroundColor = [UIColor grayColor];
+        [cell.contentView addSubview:_leftImg];
+        [cell.contentView addSubview:_rightImg];
+        
+        [_leftImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(cell.contentView).multipliedBy(0.49);
+            make.height.equalTo(cell.contentView);
+            make.left.equalTo(cell.contentView.mas_left);
+            make.top.equalTo(cell.contentView.mas_top);
+        }];
+        [_rightImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(cell.contentView).multipliedBy(0.49);
+            make.height.equalTo(cell.contentView);
+            make.right.equalTo(cell.contentView.mas_right);
+            make.top.equalTo(cell.contentView.mas_top);
+        }];
+    }
+    else if (indexPath.section == 2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:homePageTableViewCellReuseIdentifier forIndexPath:indexPath];
             switch (indexPath.row) {
                 case 0:
                     cell.backgroundColor = [UIColor whiteColor];
