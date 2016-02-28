@@ -11,9 +11,7 @@
 #import "mallViewController.h"
 #import "cartViewController.h"
 #import "userViewController.h"
-#import "tabBarViewController.h"
 #import "Utils.h"
-#import "lightColorNavController.h"
 
 @interface AppDelegate ()
 
@@ -33,11 +31,9 @@
     [[UINavigationBar appearance] setTintColor:[UIColor themeColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor titleColor]];
     
-    // 延迟0.5s
-    usleep(500 * 1000);
     
     homeViewController *homeController = [homeViewController new];
-    lightColorNavController *homeNavController = [[lightColorNavController alloc] initWithRootViewController:homeController];
+    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
 
     homeController.tabBarItem.title = LocalizedString(@"home");
     
@@ -48,7 +44,7 @@
     
     
     mallViewController *mallController = [mallViewController new];
-    lightColorNavController *mallNavController = [[lightColorNavController alloc] initWithRootViewController:mallController];
+    UINavigationController *mallNavController = [[UINavigationController alloc] initWithRootViewController:mallController];
     mallController.tabBarItem.title = LocalizedString(@"mall");
     UIImage *mallTabImg = [UIImage imageNamed:@"mall_normal"];
     UIImage *mallTabSelectedImg = [UIImage imageNamed:@"mall_selected"];
@@ -56,7 +52,7 @@
     mallController.tabBarItem.selectedImage = mallTabSelectedImg;
     
     cartViewController *cartController = [cartViewController new];
-    lightColorNavController *cartNavController = [[lightColorNavController alloc] initWithRootViewController:cartController];
+    UINavigationController *cartNavController = [[UINavigationController alloc] initWithRootViewController:cartController];
     cartController.tabBarItem.title = LocalizedString(@"cart");
     UIImage *cartTabImg = [UIImage imageNamed:@"cart_normal"];
     UIImage *cartTabSelectedImg = [UIImage imageNamed:@"cart_selected"];
@@ -65,14 +61,14 @@
     
     
     userViewController *userController = [userViewController new];
-    lightColorNavController *userNavController = [[lightColorNavController alloc] initWithRootViewController:userController];
+    UINavigationController *userNavController = [[UINavigationController alloc] initWithRootViewController:userController];
     userController.tabBarItem.title = LocalizedString(@"user");
     UIImage *userTabImg = [UIImage imageNamed:@"user_normal"];
     UIImage *userTabSelectedImg = [UIImage imageNamed:@"user_selected"];
     userController.tabBarItem.image = userTabImg;
     userController.tabBarItem.selectedImage = userTabSelectedImg;
     
-    tabBarViewController *tabBarController = [tabBarViewController new];
+    UITabBarController *tabBarController = [UITabBarController new];
     tabBarController.viewControllers = @[homeNavController, mallNavController, cartNavController, userNavController];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

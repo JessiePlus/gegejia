@@ -6,22 +6,21 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
+
 #import "homeViewController.h"
-#import "HorizonalCollectionViewController.h"
-#import "homePageTableViewController.h"
+#import "HomePageViewController.h"
 #import "foodTableViewController.h"
-#import "titleCollectionViewController.h"
 #import "tonicTableViewController.h"
 #import "maternalAndChildTableViewController.h"
 #import "finallySnappedTableViewController.h"
 #import "rightNowTableViewController.h"
 #import <Masonry/Masonry.h>
 #import "Utils.h"
+#import "CAPSPageMenu.h"
 
 @interface homeViewController () {
-    HorizonalCollectionViewController *_horizonalController;
-    titleCollectionViewController *_titleController;
 }
+@property (nonatomic) CAPSPageMenu *pageMenu;
 
 @end
 
@@ -30,74 +29,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     self.navigationItem.title = @"首页";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navItemSearch"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSearchViewController)];
-    
-    UICollectionViewFlowLayout *horizonalflowLayout = [UICollectionViewFlowLayout new];
-    horizonalflowLayout.itemSize = CGSizeMake(375, self.view.frame.size.height - 20 - 44 - 40 - 40);
-    horizonalflowLayout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
-    horizonalflowLayout.minimumInteritemSpacing = 0.0f;
-    horizonalflowLayout.minimumLineSpacing      = 0.0f;
-    horizonalflowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    
-    _horizonalController = [[HorizonalCollectionViewController alloc] initWithCollectionViewLayout:horizonalflowLayout];
+
     
     
+    HomePageViewController *homePageController = [HomePageViewController new];
+    homePageController.title = @"首页";
     
-    UICollectionViewFlowLayout *titleflowLayout = [UICollectionViewFlowLayout new];
-    titleflowLayout.itemSize = CGSizeMake(80, 40);
-    titleflowLayout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
-    titleflowLayout.minimumInteritemSpacing = 0.0f;
-    titleflowLayout.minimumLineSpacing      = 0.0f;
-    titleflowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _titleController = [[titleCollectionViewController alloc] initWithCollectionViewLayout:titleflowLayout];
-    
-    homePageTableViewController *homePageController = [homePageTableViewController new];
     foodTableViewController *foodController = [foodTableViewController new];
+    foodController.title = @"休闲零食";
+
     tonicTableViewController *tonicController = [tonicTableViewController new];
+    tonicController.title = @"保健滋补";
+
     maternalAndChildTableViewController *maternalAndChildController = [maternalAndChildTableViewController new];
+    maternalAndChildController.title = @"母婴健康";
+
     finallySnappedTableViewController *finallySnappedController = [finallySnappedTableViewController new];
+    finallySnappedController.title = @"最后疯抢";
+
     rightNowTableViewController *rightAwayController = [rightNowTableViewController new];
-    
-    NSArray *titles = @[@"首页", @"休闲零食", @"保健滋补", @"母婴健康", @"最后疯抢", @"即将开抢"];
+    rightAwayController.title = @"即将开抢";
+
     NSArray *controllers = @[homePageController, foodController, tonicController, maternalAndChildController, finallySnappedController, rightAwayController];
-    [_horizonalController controllers:controllers];
-    [_titleController title:titles];
+    NSDictionary *parameters = @{
+                                 CAPSPageMenuOptionScrollMenuBackgroundColor: [UIColor themeColor],
+                                 CAPSPageMenuOptionViewBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:20.0/255.0 blue:20.0/255.0 alpha:1.0],
+                                 CAPSPageMenuOptionSelectionIndicatorColor: [UIColor titleColor],
+                                 CAPSPageMenuOptionSelectedMenuItemLabelColor: [UIColor titleColor],
+                                 CAPSPageMenuOptionUnselectedMenuItemLabelColor: [UIColor blackColor],
+                                 CAPSPageMenuOptionBottomMenuHairlineColor: [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0],
+                                 CAPSPageMenuOptionMenuHeight: @(40.0),
+                                 CAPSPageMenuOptionMenuItemWidth: @(90.0),
+                                 CAPSPageMenuOptionCenterMenuItems: @(YES)
+                                 };
     
-    __weak HorizonalCollectionViewController *weakHorizonalController = _horizonalController;
-    __weak titleCollectionViewController *weakTitleController = _titleController;
+    _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:controllers frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 40) options:parameters];
     
-    
-    _titleController.changeIndex = ^(NSUInteger index) {
-        [weakHorizonalController.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
-    };
-    
-    _horizonalController.changeIndex = ^(NSUInteger index) {
-        [weakTitleController.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
-    };    
-    
-    [self.view addSubview:_horizonalController.collectionView];
-    [self.view addSubview:_titleController.collectionView];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.view addSubview:_pageMenu.view];
+
     self.view.backgroundColor = [UIColor themeColor];
-    
-    [_titleController.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(64);
-        make.left.equalTo(self.view.mas_left);
-        make.width.equalTo(@375);
-        make.height.equalTo(@40);
-    }];
-
-    [_horizonalController.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleController.collectionView.mas_bottom);
-        make.left.equalTo(self.view.mas_left);
-        make.width.equalTo(@375);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-40);
-    }];
 }
-
-
 
 #pragma mark - 处理左右navigationItem点击事件
 
