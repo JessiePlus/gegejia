@@ -23,7 +23,11 @@ static NSString *const kCellID = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor grayColor];
+
+    self.navigationItem.title = @"我的";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSettingViewController)];
+    
+    
     
     _table = [UITableView new];
     _table.delegate = self;
@@ -53,31 +57,45 @@ static NSString *const kCellID = @"Cell";
     
     
     UIView *header = [UIView new];
+    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_tbg"]];
     UIButton *login = [UIButton new];
-    login.backgroundColor = [UIColor redColor];
+    [login setTitle:@"登录" forState:UIControlStateNormal];
+    [login setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    login.layer.borderWidth  = 1.0f;
+    login.layer.borderColor  = [UIColor whiteColor].CGColor;
+    login.layer.cornerRadius = 2.0f;
+    
     UIButton *regis = [UIButton new];
-    regis.backgroundColor = [UIColor redColor];
+    [regis setTitle:@"注册" forState:UIControlStateNormal];
+    [regis setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    regis.layer.borderWidth  = 1.0f;
+    regis.layer.borderColor  = [UIColor whiteColor].CGColor;
+    regis.layer.cornerRadius = 2.0f;
+    [header addSubview:image];
     [header addSubview:login];
     [header addSubview:regis];
-    header.backgroundColor = [UIColor grayColor];
     
     
     UIView *footer = [UIView new];
 
-    header.frame = CGRectMake(0, 0, 375, 100);
+    header.frame = CGRectMake(0, 0, 375, 200);
+    
     _table.tableHeaderView = header;
 
+    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(header);
+    }];
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(header.mas_right).multipliedBy(0.33f);
-        make.width.equalTo(@80);
-        make.height.equalTo(@40);
-        make.centerY.equalTo(header.mas_bottom).offset(-30);
+        make.width.equalTo(@100);
+        make.height.equalTo(@30);
+        make.centerY.equalTo(header.mas_centerY);//.offset(-30);
     }];
     [regis mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(header.mas_right).multipliedBy(0.66f);
-        make.width.equalTo(@80);
-        make.height.equalTo(@40);
-        make.centerY.equalTo(header.mas_bottom).offset(-30);
+        make.width.equalTo(@100);
+        make.height.equalTo(@30);
+        make.centerY.equalTo(header.mas_centerY);//.offset(-30);
     }];
     
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,6 +106,11 @@ static NSString *const kCellID = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)pushSettingViewController
+{
+    NSLog(@"%d", __LINE__);
+    //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

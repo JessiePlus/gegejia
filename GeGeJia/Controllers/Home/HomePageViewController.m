@@ -46,6 +46,7 @@ static NSString *const kCellID = @"Cell";
             [tableView.mj_header endRefreshing];
         });
     }];
+//    [tableView.mj_header ];
     tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）

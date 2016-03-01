@@ -17,6 +17,7 @@
 #import <Masonry/Masonry.h>
 #import "Utils.h"
 #import "CAPSPageMenu.h"
+#import "SearchViewController.h"
 
 @interface homeViewController () {
 }
@@ -31,8 +32,9 @@
     // Do any additional setup after loading the view.
     
     
-    self.navigationItem.title = @"首页";
+//    self.navigationItem.title = @"首页";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navItemSearch"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSearchViewController)];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_logo"]];
 
     
     
@@ -79,7 +81,7 @@
 
 - (void)pushSearchViewController
 {
-    [self.navigationController pushViewController:[UIViewController new] animated:YES];
+    [self.navigationController pushViewController:[SearchViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

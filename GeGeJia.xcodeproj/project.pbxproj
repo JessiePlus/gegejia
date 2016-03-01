@@ -34,6 +34,9 @@
 		D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A171C84928D001D6AF9 /* LoginViewController.m */; };
 		D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */; };
 		D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */; };
+		D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */; };
+		D68B1A251C85E919001D6AF9 /* empty_shoppingCart@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = D68B1A241C85E919001D6AF9 /* empty_shoppingCart@2x.gif */; };
+		D68B1A271C85E921001D6AF9 /* empty_shoppingCart@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,10 @@
 		D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		D68B1A1D1C854E09001D6AF9 /* AFHTTPSessionManager+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+Util.h"; sourceTree = "<group>"; };
 		D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+Util.m"; sourceTree = "<group>"; };
+		D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		D68B1A241C85E919001D6AF9 /* empty_shoppingCart@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "empty_shoppingCart@2x.gif"; sourceTree = "<group>"; };
+		D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "empty_shoppingCart@3x.gif"; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +190,7 @@
 				D68B19981C79D1AF001D6AF9 /* Catagories */,
 				D68B19B61C7A05BC001D6AF9 /* Controllers */,
 				D68B19B81C7A0611001D6AF9 /* Models */,
+				D68B1A231C85E906001D6AF9 /* Resources */,
 				D68B19551C79D07D001D6AF9 /* Supporting Files */,
 				D68B19991C79D1C7001D6AF9 /* Utils */,
 				D68B19B71C7A0605001D6AF9 /* Views */,
@@ -226,10 +234,10 @@
 		D68B19981C79D1AF001D6AF9 /* Catagories */ = {
 			isa = PBXGroup;
 			children = (
-				D68B19A01C79D210001D6AF9 /* UIColor+Util.h */,
-				D68B19A11C79D210001D6AF9 /* UIColor+Util.m */,
 				D68B1A1D1C854E09001D6AF9 /* AFHTTPSessionManager+Util.h */,
 				D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */,
+				D68B19A01C79D210001D6AF9 /* UIColor+Util.h */,
+				D68B19A11C79D210001D6AF9 /* UIColor+Util.m */,
 			);
 			path = Catagories;
 			sourceTree = "<group>";
@@ -248,6 +256,8 @@
 		D68B19B41C7A0592001D6AF9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */,
+				D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */,
 				D68B198C1C79D19D001D6AF9 /* cartViewController.h */,
 				D68B198D1C79D19D001D6AF9 /* cartViewController.m */,
 				D68B198E1C79D19D001D6AF9 /* homeViewController.h */,
@@ -263,8 +273,8 @@
 		D68B19B61C7A05BC001D6AF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19D21C7B4840001D6AF9 /* Home */,
+				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
 				D68B1A121C834A6F001D6AF9 /* REPagedScrollView */,
@@ -331,7 +341,16 @@
 				D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */,
 				D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */,
 			);
-			name = LoginAndRegister;
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		D68B1A231C85E906001D6AF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A241C85E919001D6AF9 /* empty_shoppingCart@2x.gif */,
+				D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +465,8 @@
 			files = (
 				D68B19A71C79D26F001D6AF9 /* Images.xcassets in Resources */,
 				D68B19B01C79D38E001D6AF9 /* Localizable.strings in Resources */,
+				D68B1A271C85E921001D6AF9 /* empty_shoppingCart@3x.gif in Resources */,
+				D68B1A251C85E919001D6AF9 /* empty_shoppingCart@2x.gif in Resources */,
 				D68B19BE1C7AA5E2001D6AF9 /* ProvinceList.plist in Resources */,
 				D68B19AC1C79D336001D6AF9 /* InfoPlist.strings in Resources */,
 			);
@@ -533,6 +554,7 @@
 				D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* tonicTableViewController.m in Sources */,
 				D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */,
+				D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
 				D68B19971C79D19D001D6AF9 /* userViewController.m in Sources */,
 				D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */,
