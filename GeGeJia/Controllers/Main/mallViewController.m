@@ -9,6 +9,7 @@
 #import "mallViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
+#import <AFHTTPSessionManager.h>
 
 @interface mallViewController ()
 
@@ -21,14 +22,75 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
     
-    UIImageView *test = [UIImageView new];
-    [test sd_setImageWithURL:[NSURL URLWithString:@"http://tse2.mm.bing.net/th?id=OIP.Mc6bfaa79b619eb8176fc7210c1237961o0&w=241&h=154&c=7&rs=1&qlt=90&o=4&pid=1.1"]];
-    [self.view addSubview:test];
+//    UIImageView *test = [UIImageView new];
+//    [test sd_setImageWithURL:[NSURL URLWithString:@"http://tse2.mm.bing.net/th?id=OIP.Mc6bfaa79b619eb8176fc7210c1237961o0&w=241&h=154&c=7&rs=1&qlt=90&o=4&pid=1.1"]];
+//    [self.view addSubview:test];
+//    
+//    
+//    [test mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }];
     
+//    [NSURL URLWithString:@"http://app.gegejia.com/yangege/appNative/resource/homeList"];
+//    [NSURL URLWithString:@"http://app.gegejia.com/yangege/appNative/resource/homeDetail"];
     
-    [test mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+
+
+//
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager POST:URLString parameters:parameters constructingBodyWithBlock:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+//        NSLog(@"%d, %@", __LINE__, uploadProgress);
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"请求成功---%@", responseObject);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"请求失败---%@", error);
+//    }];
+
+//    
+
+    NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
+    NSDictionary *parameters = @{@"os": @"1",
+                                 @"params": @"{\"type\":\"124569\"}",
+                                 @"remark": @"isVestUpdate35",
+                                 @"sign": @"4435912AAF47B2C3",
+                                 @"version": @"2.3"
+                                 };
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"%d, %@", __LINE__, uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功---%@, %@", task, responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败---%@", error);
     }];
+    
+    
+/********************/
+//    NSString *URLString = @"http://yangege.b0.upaiyun.com/activity/saleWindow/11e1886713d30.jpg!17newsell";
+
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//
+//    [manager GET:URLString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//                NSLog(@"%d, %@", __LINE__, downloadProgress);
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        UIImage *image = [UIImage imageWithData:responseObject];
+//        NSLog(@"请求成功---%@, %@", task, responseObject);
+//        //        NSData *data = [NSData dataWithBytes:responseObject length:<#(NSUInteger)#>];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//                NSLog(@"请求失败---%@", error);
+//    }];
+    /********************/
+
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

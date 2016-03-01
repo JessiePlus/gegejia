@@ -11,12 +11,16 @@
 #import <Masonry/Masonry.h>
 #import "REPagedScrollView.h"
 
-@interface HomePageViewController () {
+static NSString *const kScrollCellID = @"ScrollCell";
+static NSString *const kCellID = @"Cell";
+
+
+@interface HomePageViewController () <UITableViewDataSource, UITableViewDelegate>{
 
 }
 //滚动广告
-@property (nonatomic) UIPageControl *pageControl;
-@property (nonatomic) UIScrollView *scroll;
+//@property (nonatomic) UIPageControl *pageControl;
+@property (nonatomic) REPagedScrollView *scrollView;
 
 //内容
 @property (nonatomic) UITableView *table;
@@ -29,7 +33,9 @@
     [super viewDidLoad];
 
     _table = [UITableView new];
-    
+    _table.delegate = self;
+    _table.dataSource = self;
+    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellID];
     
     __unsafe_unretained UITableView *tableView = _table;
     tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -49,50 +55,57 @@
         });
     }];
     
-    REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
-    [self.view addSubview:scrollView];
+    _scrollView = [[REPagedScrollView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    _scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    _scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
     
     UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     test.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addPage:test];
+    [_scrollView addPage:test];
     
     test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     test.backgroundColor = [UIColor blueColor];
-    [scrollView addPage:test];
+    [_scrollView addPage:test];
     
     test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     test.backgroundColor = [UIColor greenColor];
-    [scrollView addPage:test];
+    [_scrollView addPage:test];
     
     test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     test.backgroundColor = [UIColor redColor];
-    [scrollView addPage:test];
+    [_scrollView addPage:test];
     
     test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     test.backgroundColor = [UIColor yellowColor];
-    [scrollView addPage:test];
+    [_scrollView addPage:test];
         
     [self.view addSubview:_table];
-    
-//    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.view.mas_left);
-//        make.right.equalTo(self.view.mas_right);
-//        make.top.equalTo(self.view.mas_top).offset(104);
-//        make.height.equalTo(@100);
-//    }];
+    _table.tableHeaderView = _scrollView;
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view.mas_left);
-        make.right.equalTo(self.view.mas_right);
-        make.top.equalTo(scrollView.mas_bottom);
-        make.bottom.equalTo(self.view.mas_bottom);
+        make.edges.equalTo(self.view);
     }];
-
 
 }
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    int num = -1;
+    if (section == 0)
+        num = 1;
+    else if (section == 1)
+        num = 3;
+    
+    return num;
+}
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [_table dequeueReusableCellWithIdentifier:kCellID forIndexPath:indexPath];
+
+    return cell;
+}
 
 @end

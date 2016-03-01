@@ -64,7 +64,8 @@
                                  CAPSPageMenuOptionBottomMenuHairlineColor: [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0],
                                  CAPSPageMenuOptionMenuHeight: @(40.0),
                                  CAPSPageMenuOptionMenuItemWidth: @(90.0),
-                                 CAPSPageMenuOptionCenterMenuItems: @(YES)
+                                 CAPSPageMenuOptionCenterMenuItems: @(YES),
+                                 CAPSPageMenuOptionEnableHorizontalBounce: @(NO)
                                  };
     
     _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:controllers frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 40) options:parameters];

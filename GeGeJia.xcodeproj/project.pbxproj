@@ -31,6 +31,9 @@
 		D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */; };
 		D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */; };
 		D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */; };
+		D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A171C84928D001D6AF9 /* LoginViewController.m */; };
+		D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */; };
+		D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,12 @@
 		D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		D68B1A131C834A6F001D6AF9 /* REPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPagedScrollView.h; sourceTree = "<group>"; };
 		D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPagedScrollView.m; sourceTree = "<group>"; };
+		D68B1A161C84928D001D6AF9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D68B1A171C84928D001D6AF9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		D68B1A1D1C854E09001D6AF9 /* AFHTTPSessionManager+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+Util.h"; sourceTree = "<group>"; };
+		D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+Util.m"; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +228,8 @@
 			children = (
 				D68B19A01C79D210001D6AF9 /* UIColor+Util.h */,
 				D68B19A11C79D210001D6AF9 /* UIColor+Util.m */,
+				D68B1A1D1C854E09001D6AF9 /* AFHTTPSessionManager+Util.h */,
+				D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */,
 			);
 			path = Catagories;
 			sourceTree = "<group>";
@@ -252,6 +263,7 @@
 		D68B19B61C7A05BC001D6AF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19D21C7B4840001D6AF9 /* Home */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
@@ -309,6 +321,17 @@
 				D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */,
 			);
 			path = REPagedScrollView;
+			sourceTree = "<group>";
+		};
+		D68B1A191C8493E5001D6AF9 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A161C84928D001D6AF9 /* LoginViewController.h */,
+				D68B1A171C84928D001D6AF9 /* LoginViewController.m */,
+				D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */,
+				D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */,
+			);
+			name = LoginAndRegister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,10 +523,13 @@
 				D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
 				D68B19E61C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m in Sources */,
 				D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */,
 				D68B19EC1C7C8B23001D6AF9 /* rightNowTableViewController.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
+				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
+				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* tonicTableViewController.m in Sources */,
 				D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */,
