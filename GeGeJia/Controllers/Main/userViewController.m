@@ -84,11 +84,12 @@ static NSString *const kCellID = @"Cell";
     _table.tableHeaderView = _header;
     [_image mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_header.mas_centerX);
-        make.top.equalTo(self.view.mas_top);
-        make.width.equalTo(_header.mas_width);
+        make.top.equalTo(self.view.mas_top).offset(64);
+//        make.width.equalTo(_header.mas_width);
+        make.width.equalTo(@375);
         make.bottom.equalTo(_header.mas_bottom);
     }];
-    _image.frame = _header.bounds;
+//    _image.frame = _header.bounds;
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_header.mas_right).multipliedBy(0.33f);
         make.width.equalTo(@100);
@@ -105,6 +106,8 @@ static NSString *const kCellID = @"Cell";
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+        [self.view layoutIfNeeded];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,24 +120,24 @@ static NSString *const kCellID = @"Cell";
     //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGPoint offset = scrollView.contentOffset;
-//    if (offset.y < 0) {
-//        CGRect rect =_table.tableHeaderView.frame;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"%f", scrollView.contentOffset.y);
+    if (scrollView.contentOffset.y + 64 < 0) {
+        CGRect rect =_image.frame;
+        CGFloat factor = rect.size.height/200.0f;
 //        NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(rect));
-//        NSLog(@"%d, %f", __LINE__, offset.y);
-//        rect.origin.y = offset.y;
-//        rect.size.height =CGRectGetHeight(rect)-offset.y;
-//        NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(rect));
-//        _image.frame = rect;
-//        _table.tableHeaderView.clipsToBounds=NO;
+//        NSLog(@"%d, %f, %f, %f", __LINE__, factor*rect.size.width, factor, rect.size.height);
 //        
-//        
-//        
-//        
-//    }
-//
-//}
+        
+        [_image mas_updateConstraints:^(MASConstraintMaker *make) {
+            
+            make.width.equalTo(@(375*factor));
+        }];
+        [self.view layoutIfNeeded];
+    }
+
+
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int num = -1;
