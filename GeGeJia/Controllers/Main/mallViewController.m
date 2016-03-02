@@ -46,7 +46,15 @@
 //        NSLog(@"请求失败---%@", error);
 //    }];
 
-//    
+//
+    
+    
+//    NSDictionary *parameters = @{@"os": @"1",
+//                                 @"params": @{@"type":@"124569"},
+//                                 @"remark": @"isVestUpdate35",
+//                                 @"sign": @"4435912AAF47B2C3",
+//                                 @"version": @"2.3"
+//                                 };
 
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",
@@ -64,6 +72,7 @@
         NSLog(@"%d, %@", __LINE__, uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功---%@, %@", task, responseObject);
+        NSLog(@"%d", __LINE__);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败---%@", error);
     }];

@@ -82,9 +82,11 @@ static NSString *const kCellID = @"Cell";
     _header.frame = CGRectMake(0, 0, 375, 200);
     
     _table.tableHeaderView = _header;
-
     [_image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_header);
+        make.centerX.equalTo(_header.mas_centerX);
+        make.top.equalTo(self.view.mas_top);
+        make.width.equalTo(_header.mas_width);
+        make.bottom.equalTo(_header.mas_bottom);
     }];
     _image.frame = _header.bounds;
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -115,17 +117,24 @@ static NSString *const kCellID = @"Cell";
     //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGPoint offset = scrollView.contentOffset;
-    if (offset.y < 0) {
-        CGRect rect =_table.tableHeaderView.frame;
-        rect.origin.y = offset.y;
-        rect.size.height =CGRectGetHeight(rect)-offset.y;
-        _image.frame = rect;
-        _table.tableHeaderView.clipsToBounds=NO;
-    }
-
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGPoint offset = scrollView.contentOffset;
+//    if (offset.y < 0) {
+//        CGRect rect =_table.tableHeaderView.frame;
+//        NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(rect));
+//        NSLog(@"%d, %f", __LINE__, offset.y);
+//        rect.origin.y = offset.y;
+//        rect.size.height =CGRectGetHeight(rect)-offset.y;
+//        NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(rect));
+//        _image.frame = rect;
+//        _table.tableHeaderView.clipsToBounds=NO;
+//        
+//        
+//        
+//        
+//    }
+//
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int num = -1;
