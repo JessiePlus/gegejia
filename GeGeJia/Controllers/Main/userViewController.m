@@ -8,14 +8,15 @@
 
 #import "userViewController.h"
 #import <Masonry/Masonry.h>
-#import <MJRefresh/MJRefresh.h>
+//#import <MJRefresh/MJRefresh.h>
 
 
 static NSString *const kCellID = @"Cell";
 
 @interface userViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *table;
-
+@property (nonatomic) UIView *header;
+@property (nonatomic) UIImageView *image;
 @end
 
 @implementation userViewController
@@ -34,30 +35,30 @@ static NSString *const kCellID = @"Cell";
     _table.dataSource = self;
     [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellID];
     
-    __unsafe_unretained UITableView *tableView = _table;
-    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [tableView.mj_header endRefreshing];
-        });
-    }];
-    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [tableView.mj_footer endRefreshing];
-        });
-    }];
+//    __unsafe_unretained UITableView *tableView = _table;
+//    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        // 进入刷新状态后会自动调用这个block
+//        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            // 结束刷新
+//            [tableView.mj_header endRefreshing];
+//        });
+//    }];
+//    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        // 进入刷新状态后会自动调用这个block
+//        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            // 结束刷新
+//            [tableView.mj_footer endRefreshing];
+//        });
+//    }];
     
     
     [self.view addSubview:_table];
     
     
-    UIView *header = [UIView new];
-    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_tbg"]];
+    _header = [UIView new];
+    _image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_tbg"]];
     UIButton *login = [UIButton new];
     [login setTitle:@"登录" forState:UIControlStateNormal];
     [login setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -71,31 +72,32 @@ static NSString *const kCellID = @"Cell";
     regis.layer.borderWidth  = 1.0f;
     regis.layer.borderColor  = [UIColor whiteColor].CGColor;
     regis.layer.cornerRadius = 2.0f;
-    [header addSubview:image];
-    [header addSubview:login];
-    [header addSubview:regis];
+    [_header addSubview:_image];
+    [_header addSubview:login];
+    [_header addSubview:regis];
     
     
     UIView *footer = [UIView new];
 
-    header.frame = CGRectMake(0, 0, 375, 200);
+    _header.frame = CGRectMake(0, 0, 375, 200);
     
-    _table.tableHeaderView = header;
+    _table.tableHeaderView = _header;
 
-    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(header);
+    [_image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(_header);
     }];
+    _image.frame = _header.bounds;
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(header.mas_right).multipliedBy(0.33f);
+        make.centerX.equalTo(_header.mas_right).multipliedBy(0.33f);
         make.width.equalTo(@100);
         make.height.equalTo(@30);
-        make.centerY.equalTo(header.mas_centerY);//.offset(-30);
+        make.centerY.equalTo(_header.mas_centerY);//.offset(-30);
     }];
     [regis mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(header.mas_right).multipliedBy(0.66f);
+        make.centerX.equalTo(_header.mas_right).multipliedBy(0.66f);
         make.width.equalTo(@100);
         make.height.equalTo(@30);
-        make.centerY.equalTo(header.mas_centerY);//.offset(-30);
+        make.centerY.equalTo(_header.mas_centerY);//.offset(-30);
     }];
     
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -111,6 +113,18 @@ static NSString *const kCellID = @"Cell";
 {
     NSLog(@"%d", __LINE__);
     //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGPoint offset = scrollView.contentOffset;
+    if (offset.y < 0) {
+        CGRect rect =_table.tableHeaderView.frame;
+        rect.origin.y = offset.y;
+        rect.size.height =CGRectGetHeight(rect)-offset.y;
+        _image.frame = rect;
+        _table.tableHeaderView.clipsToBounds=NO;
+    }
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
