@@ -37,6 +37,13 @@
 		D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */; };
 		D68B1A251C85E919001D6AF9 /* empty_shoppingCart@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = D68B1A241C85E919001D6AF9 /* empty_shoppingCart@2x.gif */; };
 		D68B1A271C85E921001D6AF9 /* empty_shoppingCart@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */; };
+		D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A2A1C888025001D6AF9 /* BaseNSObject.m */; };
+		D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A2E1C888025001D6AF9 /* HomePageActivityList.m */; };
+		D68B1A3C1C888025001D6AF9 /* HomePageBannerList.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A301C888025001D6AF9 /* HomePageBannerList.m */; };
+		D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A321C888025001D6AF9 /* HomePageContent.m */; };
+		D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A341C888025001D6AF9 /* HomePageHotList.m */; };
+		D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */; };
+		D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A381C888025001D6AF9 /* HomePageNSObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +123,21 @@
 		D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		D68B1A241C85E919001D6AF9 /* empty_shoppingCart@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "empty_shoppingCart@2x.gif"; sourceTree = "<group>"; };
 		D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "empty_shoppingCart@3x.gif"; sourceTree = "<group>"; };
+		D68B1A291C888025001D6AF9 /* BaseNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNSObject.h; sourceTree = "<group>"; };
+		D68B1A2A1C888025001D6AF9 /* BaseNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNSObject.m; sourceTree = "<group>"; };
+		D68B1A2B1C888025001D6AF9 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		D68B1A2D1C888025001D6AF9 /* HomePageActivityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageActivityList.h; sourceTree = "<group>"; };
+		D68B1A2E1C888025001D6AF9 /* HomePageActivityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageActivityList.m; sourceTree = "<group>"; };
+		D68B1A2F1C888025001D6AF9 /* HomePageBannerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageBannerList.h; sourceTree = "<group>"; };
+		D68B1A301C888025001D6AF9 /* HomePageBannerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageBannerList.m; sourceTree = "<group>"; };
+		D68B1A311C888025001D6AF9 /* HomePageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageContent.h; sourceTree = "<group>"; };
+		D68B1A321C888025001D6AF9 /* HomePageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageContent.m; sourceTree = "<group>"; };
+		D68B1A331C888025001D6AF9 /* HomePageHotList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHotList.h; sourceTree = "<group>"; };
+		D68B1A341C888025001D6AF9 /* HomePageHotList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHotList.m; sourceTree = "<group>"; };
+		D68B1A351C888025001D6AF9 /* HomePageNowGegeRecommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageNowGegeRecommend.h; sourceTree = "<group>"; };
+		D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNowGegeRecommend.m; sourceTree = "<group>"; };
+		D68B1A371C888025001D6AF9 /* HomePageNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageNSObject.h; sourceTree = "<group>"; };
+		D68B1A381C888025001D6AF9 /* HomePageNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNSObject.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +314,7 @@
 		D68B19B81C7A0611001D6AF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D68B1A281C888010001D6AF9 /* Home */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,6 +374,28 @@
 				D68B1A261C85E921001D6AF9 /* empty_shoppingCart@3x.gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D68B1A281C888010001D6AF9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A291C888025001D6AF9 /* BaseNSObject.h */,
+				D68B1A2A1C888025001D6AF9 /* BaseNSObject.m */,
+				D68B1A2B1C888025001D6AF9 /* DataModels.h */,
+				D68B1A2D1C888025001D6AF9 /* HomePageActivityList.h */,
+				D68B1A2E1C888025001D6AF9 /* HomePageActivityList.m */,
+				D68B1A2F1C888025001D6AF9 /* HomePageBannerList.h */,
+				D68B1A301C888025001D6AF9 /* HomePageBannerList.m */,
+				D68B1A311C888025001D6AF9 /* HomePageContent.h */,
+				D68B1A321C888025001D6AF9 /* HomePageContent.m */,
+				D68B1A331C888025001D6AF9 /* HomePageHotList.h */,
+				D68B1A341C888025001D6AF9 /* HomePageHotList.m */,
+				D68B1A371C888025001D6AF9 /* HomePageNSObject.h */,
+				D68B1A381C888025001D6AF9 /* HomePageNSObject.m */,
+				D68B1A351C888025001D6AF9 /* HomePageNowGegeRecommend.h */,
+				D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,14 +589,19 @@
 				D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */,
 				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
+				D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */,
 				D68B19E61C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m in Sources */,
 				D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */,
 				D68B19EC1C7C8B23001D6AF9 /* rightNowTableViewController.m in Sources */,
+				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
+				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */,
+				D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* tonicTableViewController.m in Sources */,
 				D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */,
 				D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */,
@@ -560,8 +610,10 @@
 				D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
+				D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* homeViewController.m in Sources */,
 				D68B19961C79D19D001D6AF9 /* mallViewController.m in Sources */,
+				D68B1A3C1C888025001D6AF9 /* HomePageBannerList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
