@@ -1,5 +1,5 @@
 //
-//  tonicTableViewController.h
+//  rightAwayTableViewController.h
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface tonicTableViewController : UITableViewController
+@interface RightNowTableViewController : UITableViewController
 
 @end

@@ -7,25 +7,25 @@
 //
 
 
-#import "homeViewController.h"
+#import "HomeViewController.h"
 #import "HomePageViewController.h"
-#import "foodTableViewController.h"
-#import "tonicTableViewController.h"
-#import "maternalAndChildTableViewController.h"
-#import "finallySnappedTableViewController.h"
-#import "rightNowTableViewController.h"
+#import "FoodTableViewController.h"
+#import "TonicTableViewController.h"
+#import "MaternalAndChildTableViewController.h"
+#import "FinallySnappedTableViewController.h"
+#import "RightNowTableViewController.h"
 #import <Masonry/Masonry.h>
 #import "Utils.h"
 #import "CAPSPageMenu.h"
 #import "SearchViewController.h"
 
-@interface homeViewController () {
+@interface HomeViewController () {
 }
 @property (nonatomic) CAPSPageMenu *pageMenu;
 
 @end
 
-@implementation homeViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,19 +41,19 @@
     HomePageViewController *homePageController = [HomePageViewController new];
     homePageController.title = @"首页";
     
-    foodTableViewController *foodController = [foodTableViewController new];
+    FoodTableViewController *foodController = [FoodTableViewController new];
     foodController.title = @"休闲零食";
 
-    tonicTableViewController *tonicController = [tonicTableViewController new];
+    TonicTableViewController *tonicController = [TonicTableViewController new];
     tonicController.title = @"保健滋补";
 
-    maternalAndChildTableViewController *maternalAndChildController = [maternalAndChildTableViewController new];
+    MaternalAndChildTableViewController *maternalAndChildController = [MaternalAndChildTableViewController new];
     maternalAndChildController.title = @"母婴健康";
 
-    finallySnappedTableViewController *finallySnappedController = [finallySnappedTableViewController new];
+    FinallySnappedTableViewController *finallySnappedController = [FinallySnappedTableViewController new];
     finallySnappedController.title = @"最后疯抢";
 
-    rightNowTableViewController *rightAwayController = [rightNowTableViewController new];
+    RightNowTableViewController *rightAwayController = [RightNowTableViewController new];
     rightAwayController.title = @"即将开抢";
 
     NSArray *controllers = @[homePageController, foodController, tonicController, maternalAndChildController, finallySnappedController, rightAwayController];

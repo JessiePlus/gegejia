@@ -1,18 +1,19 @@
 //
-//  maternalAndChildTableViewController.m
+//  foodTableViewController.m
 //  GeGeJia
 //
-//  Created by dinglin on 16/2/23.
+//  Created by dinglin on 16/2/22.
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "maternalAndChildTableViewController.h"
+#import "FoodTableViewController.h"
 
-@interface maternalAndChildTableViewController ()
+@interface FoodTableViewController ()
 
 @end
 
-@implementation maternalAndChildTableViewController
+@implementation FoodTableViewController
+static NSString * const foodTableViewCellReuseIdentifier = @"foodCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +23,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:foodTableViewCellReuseIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,22 +34,41 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 6;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:foodTableViewCellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    switch (indexPath.row) {
+        case 0:
+            cell.backgroundColor = [UIColor whiteColor];
+            break;
+        case 1:
+            cell.backgroundColor = [UIColor blueColor];
+            break;
+        case 2:
+            cell.backgroundColor = [UIColor redColor];
+            break;
+        case 3:
+            cell.backgroundColor = [UIColor purpleColor];
+            break;
+        default:
+            cell.backgroundColor = [UIColor purpleColor];
+            break;
+    }
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

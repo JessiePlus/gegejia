@@ -1,5 +1,5 @@
 //
-//  mainViewController.h
+//  carViewController.h
 //  gegejia
 //
 //  Created by dinglin on 16/2/21.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface homeViewController : UIViewController
+@interface CartViewController : UIViewController
 
 @end

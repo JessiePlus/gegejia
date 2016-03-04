@@ -1,5 +1,5 @@
 //
-//  rightAwayTableViewController.h
+//  maternalAndChildTableViewController.h
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface rightNowTableViewController : UITableViewController
+@interface MaternalAndChildTableViewController : UITableViewController
 
 @end

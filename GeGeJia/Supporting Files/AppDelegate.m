@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "homeViewController.h"
-#import "mallViewController.h"
-#import "cartViewController.h"
-#import "userViewController.h"
+#import "HomeViewController.h"
+#import "MallViewController.h"
+#import "CartViewController.h"
+#import "UserViewController.h"
 #import "Utils.h"
 
 @interface AppDelegate ()
@@ -32,7 +32,7 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor titleColor]];
     
     
-    homeViewController *homeController = [homeViewController new];
+    HomeViewController *homeController = [HomeViewController new];
     UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
 
     homeController.tabBarItem.title = LocalizedString(@"home");
@@ -43,7 +43,7 @@
     homeController.tabBarItem.selectedImage = homeTabSelectedImg;
     
     
-    mallViewController *mallController = [mallViewController new];
+    MallViewController *mallController = [MallViewController new];
     UINavigationController *mallNavController = [[UINavigationController alloc] initWithRootViewController:mallController];
     mallController.tabBarItem.title = LocalizedString(@"mall");
     UIImage *mallTabImg = [UIImage imageNamed:@"mall_normal"];
@@ -51,7 +51,7 @@
     mallController.tabBarItem.image = mallTabImg;
     mallController.tabBarItem.selectedImage = mallTabSelectedImg;
     
-    cartViewController *cartController = [cartViewController new];
+    CartViewController *cartController = [CartViewController new];
     UINavigationController *cartNavController = [[UINavigationController alloc] initWithRootViewController:cartController];
     cartController.tabBarItem.title = LocalizedString(@"cart");
     UIImage *cartTabImg = [UIImage imageNamed:@"cart_normal"];
@@ -60,7 +60,7 @@
     cartController.tabBarItem.selectedImage = cartTabSelectedImg;
     
     
-    userViewController *userController = [userViewController new];
+    UserViewController *userController = [UserViewController new];
     UINavigationController *userNavController = [[UINavigationController alloc] initWithRootViewController:userController];
     userController.tabBarItem.title = LocalizedString(@"user");
     UIImage *userTabImg = [UIImage imageNamed:@"user_normal"];

@@ -6,18 +6,18 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "mallViewController.h"
+#import "MallViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
 #import <AFHTTPSessionManager.h>
 #import "DataModels.h"
 
 
-@interface mallViewController ()
+@interface MallViewController ()
 
 @end
 
-@implementation mallViewController
+@implementation MallViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

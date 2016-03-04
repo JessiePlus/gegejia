@@ -1,18 +1,18 @@
 //
-//  rightAwayTableViewController.m
+//  tonicTableViewController.m
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "rightNowTableViewController.h"
+#import "TonicTableViewController.h"
 
-@interface rightNowTableViewController ()
+@interface TonicTableViewController ()
 
 @end
 
-@implementation rightNowTableViewController
+@implementation TonicTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

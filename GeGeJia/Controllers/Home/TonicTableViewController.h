@@ -1,5 +1,5 @@
 //
-//  finallySnappedTableViewController.h
+//  tonicTableViewController.h
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface finallySnappedTableViewController : UITableViewController
+@interface TonicTableViewController : UITableViewController
 
 @end

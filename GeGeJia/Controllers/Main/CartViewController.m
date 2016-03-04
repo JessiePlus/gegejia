@@ -6,16 +6,16 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "cartViewController.h"
+#import "CartViewController.h"
 #import "FLAnimatedImage.h"
 #import "masonry.h"
 #import "Utils.h"
 
-@interface cartViewController ()
+@interface CartViewController ()
 
 @end
 
-@implementation cartViewController
+@implementation CartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

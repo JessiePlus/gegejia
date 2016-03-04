@@ -1,18 +1,18 @@
 //
-//  finallySnappedTableViewController.m
+//  rightAwayTableViewController.m
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "finallySnappedTableViewController.h"
+#import "RightNowTableViewController.h"
 
-@interface finallySnappedTableViewController ()
+@interface RightNowTableViewController ()
 
 @end
 
-@implementation finallySnappedTableViewController
+@implementation RightNowTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

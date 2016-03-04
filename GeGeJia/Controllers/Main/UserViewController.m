@@ -6,20 +6,20 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "userViewController.h"
+#import "UserViewController.h"
 #import <Masonry/Masonry.h>
 //#import <MJRefresh/MJRefresh.h>
 
 
 static NSString *const kCellID = @"Cell";
 
-@interface userViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface UserViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *table;
 @property (nonatomic) UIView *header;
 @property (nonatomic) UIImageView *image;
 @end
 
-@implementation userViewController
+@implementation UserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

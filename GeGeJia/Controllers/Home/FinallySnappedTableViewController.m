@@ -1,18 +1,18 @@
 //
-//  tonicTableViewController.m
+//  finallySnappedTableViewController.m
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "tonicTableViewController.h"
+#import "FinallySnappedTableViewController.h"
 
-@interface tonicTableViewController ()
+@interface FinallySnappedTableViewController ()
 
 @end
 
-@implementation tonicTableViewController
+@implementation FinallySnappedTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

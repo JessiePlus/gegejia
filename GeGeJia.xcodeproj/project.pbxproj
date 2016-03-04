@@ -12,10 +12,10 @@
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
 		D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19891C79D107001D6AF9 /* AppDelegate.m */; };
-		D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B198D1C79D19D001D6AF9 /* cartViewController.m */; };
-		D68B19951C79D19D001D6AF9 /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B198F1C79D19D001D6AF9 /* homeViewController.m */; };
-		D68B19961C79D19D001D6AF9 /* mallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19911C79D19D001D6AF9 /* mallViewController.m */; };
-		D68B19971C79D19D001D6AF9 /* userViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19931C79D19D001D6AF9 /* userViewController.m */; };
+		D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B198D1C79D19D001D6AF9 /* CartViewController.m */; };
+		D68B19951C79D19D001D6AF9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B198F1C79D19D001D6AF9 /* HomeViewController.m */; };
+		D68B19961C79D19D001D6AF9 /* MallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19911C79D19D001D6AF9 /* MallViewController.m */; };
+		D68B19971C79D19D001D6AF9 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19931C79D19D001D6AF9 /* UserViewController.m */; };
 		D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B199B1C79D1FC001D6AF9 /* LocalizeHelper.m */; };
 		D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B199D1C79D1FC001D6AF9 /* Utils.m */; };
 		D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19A11C79D210001D6AF9 /* UIColor+Util.m */; };
@@ -23,11 +23,11 @@
 		D68B19AC1C79D336001D6AF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19AE1C79D336001D6AF9 /* InfoPlist.strings */; };
 		D68B19B01C79D38E001D6AF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68B19B21C79D38E001D6AF9 /* Localizable.strings */; };
 		D68B19BE1C7AA5E2001D6AF9 /* ProvinceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D68B19BD1C7AA5E2001D6AF9 /* ProvinceList.plist */; };
-		D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */; };
-		D68B19E31C7C89E2001D6AF9 /* tonicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E21C7C89E2001D6AF9 /* tonicTableViewController.m */; };
-		D68B19E61C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E51C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m */; };
-		D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E81C7C8AAB001D6AF9 /* finallySnappedTableViewController.m */; };
-		D68B19EC1C7C8B23001D6AF9 /* rightNowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19EB1C7C8B23001D6AF9 /* rightNowTableViewController.m */; };
+		D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19D71C7B48E1001D6AF9 /* FoodTableViewController.m */; };
+		D68B19E31C7C89E2001D6AF9 /* TonicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E21C7C89E2001D6AF9 /* TonicTableViewController.m */; };
+		D68B19E61C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E51C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m */; };
+		D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */; };
+		D68B19EC1C7C8B23001D6AF9 /* RightNowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19EB1C7C8B23001D6AF9 /* RightNowTableViewController.m */; };
 		D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */; };
 		D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */; };
 		D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */; };
@@ -77,14 +77,14 @@
 		D68B197C1C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D68B19881C79D107001D6AF9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D68B19891C79D107001D6AF9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D68B198C1C79D19D001D6AF9 /* cartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cartViewController.h; sourceTree = "<group>"; };
-		D68B198D1C79D19D001D6AF9 /* cartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cartViewController.m; sourceTree = "<group>"; };
-		D68B198E1C79D19D001D6AF9 /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
-		D68B198F1C79D19D001D6AF9 /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
-		D68B19901C79D19D001D6AF9 /* mallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mallViewController.h; sourceTree = "<group>"; };
-		D68B19911C79D19D001D6AF9 /* mallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mallViewController.m; sourceTree = "<group>"; };
-		D68B19921C79D19D001D6AF9 /* userViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userViewController.h; sourceTree = "<group>"; };
-		D68B19931C79D19D001D6AF9 /* userViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userViewController.m; sourceTree = "<group>"; };
+		D68B198C1C79D19D001D6AF9 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		D68B198D1C79D19D001D6AF9 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		D68B198E1C79D19D001D6AF9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D68B198F1C79D19D001D6AF9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D68B19901C79D19D001D6AF9 /* MallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallViewController.h; sourceTree = "<group>"; };
+		D68B19911C79D19D001D6AF9 /* MallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MallViewController.m; sourceTree = "<group>"; };
+		D68B19921C79D19D001D6AF9 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		D68B19931C79D19D001D6AF9 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		D68B199A1C79D1FC001D6AF9 /* LocalizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeHelper.h; sourceTree = "<group>"; };
 		D68B199B1C79D1FC001D6AF9 /* LocalizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeHelper.m; sourceTree = "<group>"; };
 		D68B199C1C79D1FC001D6AF9 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -97,16 +97,16 @@
 		D68B19B11C79D38E001D6AF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D68B19B31C79D396001D6AF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D68B19BD1C7AA5E2001D6AF9 /* ProvinceList.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ProvinceList.plist; sourceTree = "<group>"; };
-		D68B19D61C7B48E1001D6AF9 /* foodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foodTableViewController.h; sourceTree = "<group>"; };
-		D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foodTableViewController.m; sourceTree = "<group>"; };
-		D68B19E11C7C89E2001D6AF9 /* tonicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tonicTableViewController.h; sourceTree = "<group>"; };
-		D68B19E21C7C89E2001D6AF9 /* tonicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tonicTableViewController.m; sourceTree = "<group>"; };
-		D68B19E41C7C8A3B001D6AF9 /* maternalAndChildTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maternalAndChildTableViewController.h; sourceTree = "<group>"; };
-		D68B19E51C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = maternalAndChildTableViewController.m; sourceTree = "<group>"; };
-		D68B19E71C7C8AAB001D6AF9 /* finallySnappedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = finallySnappedTableViewController.h; sourceTree = "<group>"; };
-		D68B19E81C7C8AAB001D6AF9 /* finallySnappedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = finallySnappedTableViewController.m; sourceTree = "<group>"; };
-		D68B19EA1C7C8B23001D6AF9 /* rightNowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rightNowTableViewController.h; sourceTree = "<group>"; };
-		D68B19EB1C7C8B23001D6AF9 /* rightNowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rightNowTableViewController.m; sourceTree = "<group>"; };
+		D68B19D61C7B48E1001D6AF9 /* FoodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableViewController.h; sourceTree = "<group>"; };
+		D68B19D71C7B48E1001D6AF9 /* FoodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableViewController.m; sourceTree = "<group>"; };
+		D68B19E11C7C89E2001D6AF9 /* TonicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonicTableViewController.h; sourceTree = "<group>"; };
+		D68B19E21C7C89E2001D6AF9 /* TonicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonicTableViewController.m; sourceTree = "<group>"; };
+		D68B19E41C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaternalAndChildTableViewController.h; sourceTree = "<group>"; };
+		D68B19E51C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaternalAndChildTableViewController.m; sourceTree = "<group>"; };
+		D68B19E71C7C8AAB001D6AF9 /* FinallySnappedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinallySnappedTableViewController.h; sourceTree = "<group>"; };
+		D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinallySnappedTableViewController.m; sourceTree = "<group>"; };
+		D68B19EA1C7C8B23001D6AF9 /* RightNowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightNowTableViewController.h; sourceTree = "<group>"; };
+		D68B19EB1C7C8B23001D6AF9 /* RightNowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightNowTableViewController.m; sourceTree = "<group>"; };
 		D68B1A0A1C832E7A001D6AF9 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
@@ -280,14 +280,14 @@
 			children = (
 				D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */,
 				D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */,
-				D68B198C1C79D19D001D6AF9 /* cartViewController.h */,
-				D68B198D1C79D19D001D6AF9 /* cartViewController.m */,
-				D68B198E1C79D19D001D6AF9 /* homeViewController.h */,
-				D68B198F1C79D19D001D6AF9 /* homeViewController.m */,
-				D68B19901C79D19D001D6AF9 /* mallViewController.h */,
-				D68B19911C79D19D001D6AF9 /* mallViewController.m */,
-				D68B19921C79D19D001D6AF9 /* userViewController.h */,
-				D68B19931C79D19D001D6AF9 /* userViewController.m */,
+				D68B198C1C79D19D001D6AF9 /* CartViewController.h */,
+				D68B198D1C79D19D001D6AF9 /* CartViewController.m */,
+				D68B198E1C79D19D001D6AF9 /* HomeViewController.h */,
+				D68B198F1C79D19D001D6AF9 /* HomeViewController.m */,
+				D68B19901C79D19D001D6AF9 /* MallViewController.h */,
+				D68B19911C79D19D001D6AF9 /* MallViewController.m */,
+				D68B19921C79D19D001D6AF9 /* UserViewController.h */,
+				D68B19931C79D19D001D6AF9 /* UserViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 		D68B19B81C7A0611001D6AF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A281C888010001D6AF9 /* Home */,
+				D68B1A411C891B1A001D6AF9 /* Json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,16 +324,16 @@
 			children = (
 				D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */,
 				D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */,
-				D68B19E71C7C8AAB001D6AF9 /* finallySnappedTableViewController.h */,
-				D68B19E81C7C8AAB001D6AF9 /* finallySnappedTableViewController.m */,
-				D68B19D61C7B48E1001D6AF9 /* foodTableViewController.h */,
-				D68B19D71C7B48E1001D6AF9 /* foodTableViewController.m */,
-				D68B19E41C7C8A3B001D6AF9 /* maternalAndChildTableViewController.h */,
-				D68B19E51C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m */,
-				D68B19EA1C7C8B23001D6AF9 /* rightNowTableViewController.h */,
-				D68B19EB1C7C8B23001D6AF9 /* rightNowTableViewController.m */,
-				D68B19E11C7C89E2001D6AF9 /* tonicTableViewController.h */,
-				D68B19E21C7C89E2001D6AF9 /* tonicTableViewController.m */,
+				D68B19E71C7C8AAB001D6AF9 /* FinallySnappedTableViewController.h */,
+				D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */,
+				D68B19D61C7B48E1001D6AF9 /* FoodTableViewController.h */,
+				D68B19D71C7B48E1001D6AF9 /* FoodTableViewController.m */,
+				D68B19E41C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.h */,
+				D68B19E51C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m */,
+				D68B19EA1C7C8B23001D6AF9 /* RightNowTableViewController.h */,
+				D68B19EB1C7C8B23001D6AF9 /* RightNowTableViewController.m */,
+				D68B19E11C7C89E2001D6AF9 /* TonicTableViewController.h */,
+				D68B19E21C7C89E2001D6AF9 /* TonicTableViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -396,6 +396,14 @@
 				D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D68B1A411C891B1A001D6AF9 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A281C888010001D6AF9 /* Home */,
+			);
+			name = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,33 +594,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D68B19941C79D19D001D6AF9 /* cartViewController.m in Sources */,
+				D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
 				D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */,
 				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
 				D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */,
-				D68B19E61C7C8A3B001D6AF9 /* maternalAndChildTableViewController.m in Sources */,
+				D68B19E61C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m in Sources */,
 				D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */,
-				D68B19EC1C7C8B23001D6AF9 /* rightNowTableViewController.m in Sources */,
+				D68B19EC1C7C8B23001D6AF9 /* RightNowTableViewController.m in Sources */,
 				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
 				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
-				D68B19E91C7C8AAB001D6AF9 /* finallySnappedTableViewController.m in Sources */,
+				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,
 				D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */,
-				D68B19E31C7C89E2001D6AF9 /* tonicTableViewController.m in Sources */,
+				D68B19E31C7C89E2001D6AF9 /* TonicTableViewController.m in Sources */,
 				D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */,
 				D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
-				D68B19971C79D19D001D6AF9 /* userViewController.m in Sources */,
-				D68B19D81C7B48E1001D6AF9 /* foodTableViewController.m in Sources */,
+				D68B19971C79D19D001D6AF9 /* UserViewController.m in Sources */,
+				D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
 				D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */,
-				D68B19951C79D19D001D6AF9 /* homeViewController.m in Sources */,
-				D68B19961C79D19D001D6AF9 /* mallViewController.m in Sources */,
+				D68B19951C79D19D001D6AF9 /* HomeViewController.m in Sources */,
+				D68B19961C79D19D001D6AF9 /* MallViewController.m in Sources */,
 				D68B1A3C1C888025001D6AF9 /* HomePageBannerList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

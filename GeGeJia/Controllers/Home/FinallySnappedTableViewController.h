@@ -1,5 +1,5 @@
 //
-//  maternalAndChildTableViewController.h
+//  finallySnappedTableViewController.h
 //  GeGeJia
 //
 //  Created by dinglin on 16/2/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface maternalAndChildTableViewController : UITableViewController
+@interface FinallySnappedTableViewController : UITableViewController
 
 @end
