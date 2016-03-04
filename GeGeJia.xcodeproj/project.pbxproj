@@ -278,14 +278,14 @@
 		D68B19B41C7A0592001D6AF9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */,
-				D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */,
 				D68B198C1C79D19D001D6AF9 /* CartViewController.h */,
 				D68B198D1C79D19D001D6AF9 /* CartViewController.m */,
 				D68B198E1C79D19D001D6AF9 /* HomeViewController.h */,
 				D68B198F1C79D19D001D6AF9 /* HomeViewController.m */,
 				D68B19901C79D19D001D6AF9 /* MallViewController.h */,
 				D68B19911C79D19D001D6AF9 /* MallViewController.m */,
+				D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */,
+				D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */,
 				D68B19921C79D19D001D6AF9 /* UserViewController.h */,
 				D68B19931C79D19D001D6AF9 /* UserViewController.m */,
 			);
@@ -322,12 +322,12 @@
 		D68B19D21C7B4840001D6AF9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */,
-				D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */,
 				D68B19E71C7C8AAB001D6AF9 /* FinallySnappedTableViewController.h */,
 				D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */,
 				D68B19D61C7B48E1001D6AF9 /* FoodTableViewController.h */,
 				D68B19D71C7B48E1001D6AF9 /* FoodTableViewController.m */,
+				D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */,
+				D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */,
 				D68B19E41C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.h */,
 				D68B19E51C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m */,
 				D68B19EA1C7C8B23001D6AF9 /* RightNowTableViewController.h */,
@@ -403,7 +403,7 @@
 			children = (
 				D68B1A281C888010001D6AF9 /* Home */,
 			);
-			name = Json;
+			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

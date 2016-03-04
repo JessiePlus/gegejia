@@ -9,8 +9,7 @@
 #import "MallViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
-#import <AFHTTPSessionManager.h>
-#import "DataModels.h"
+
 
 
 @interface MallViewController ()
@@ -58,53 +57,7 @@
 //                                 @"version": @"2.3"
 //                                 };
 
-    NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
-    NSDictionary *parameters = @{@"os": @"1",
-                                 @"params": @"{\"type\":\"124569\"}",
-                                 @"remark": @"isVestUpdate35",
-                                 @"sign": @"4435912AAF47B2C3",
-                                 @"version": @"2.3"
-                                 };
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-        NSLog(@"%d, %@", __LINE__, uploadProgress);
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseNSObject *base = [BaseNSObject modelObjectWithDictionary:responseObject];
-        
-        NSError *error;
-        NSData *data = [base.params dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *paramDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-        
-        HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
-        
-        for (HomePageBannerList *bannerList in homePage.bannerList) {
-            NSLog(@"%@", bannerList);
-        }
-        
-        for (HomePageActivityList *activityList in homePage.activityList) {
-            NSLog(@"%@", activityList.title);
-            
-            for (HomePageContent *content in activityList.content) {
-                NSLog(@"%@", content);
-            }
-        }
-        for (HomePageHotList *hotList in homePage.hotList) {
-            NSLog(@"%@", hotList);
-        }
-        
-        HomePageNowGegeRecommend *NowGegeRecommend = homePage.nowGegeRecommend;
-        NSLog(@"%@", NowGegeRecommend.title);
-        for (NSString *content in NowGegeRecommend.content) {
-            NSLog(@"%@", content);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"请求失败---%@", error);
-    }];
+
     
     
 /********************/

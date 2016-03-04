@@ -10,6 +10,9 @@
 #import <MJRefresh/MJRefresh.h>
 #import <Masonry/Masonry.h>
 #import "REPagedScrollView.h"
+#import <AFHTTPSessionManager.h>
+#import "DataModels.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kScrollCellID = @"ScrollCell";
 static NSString *const kCellID = @"Cell";
@@ -60,31 +63,88 @@ static NSString *const kCellID = @"Cell";
     _scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     _scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
     
-    UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    test.backgroundColor = [UIColor lightGrayColor];
-    [_scrollView addPage:test];
     
-    test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    test.backgroundColor = [UIColor blueColor];
-    [_scrollView addPage:test];
+    UIImageView *banner1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    [_scrollView addPage:banner1];
     
-    test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    test.backgroundColor = [UIColor greenColor];
-    [_scrollView addPage:test];
+    UIImageView *banner2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    [_scrollView addPage:banner2];
     
-    test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    test.backgroundColor = [UIColor redColor];
-    [_scrollView addPage:test];
+    UIImageView *banner3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    [_scrollView addPage:banner3];
     
-    test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    test.backgroundColor = [UIColor yellowColor];
-    [_scrollView addPage:test];
-        
+    UIImageView *banner4 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    [_scrollView addPage:banner4];
+    
+    NSArray *banners = @[banner1, banner2, banner3, banner4];
+
+    
     [self.view addSubview:_table];
     _table.tableHeaderView = _scrollView;
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    
+    
+    
+    
+    
+    
+    
+    NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
+    NSDictionary *parameters = @{@"os": @"1",
+                                 @"params": @"{\"type\":\"124569\"}",
+                                 @"remark": @"isVestUpdate35",
+                                 @"sign": @"4435912AAF47B2C3",
+                                 @"version": @"2.3"
+                                 };
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"%d, %@", __LINE__, uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        BaseNSObject *base = [BaseNSObject modelObjectWithDictionary:responseObject];
+        
+        NSError *error;
+        NSData *data = [base.params dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *paramDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        
+        HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
+        
+        
+        [homePage.bannerList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [banners[idx] sd_setImageWithURL:[NSURL URLWithString:((HomePageBannerList *)obj).image]];
+        }];
+        
+        for (HomePageActivityList *activityList in homePage.activityList) {
+            NSLog(@"%@", activityList.title);
+            
+            for (HomePageContent *content in activityList.content) {
+                NSLog(@"%@", content);
+            }
+        }
+        for (HomePageHotList *hotList in homePage.hotList) {
+            NSLog(@"%@", hotList);
+        }
+        
+        HomePageNowGegeRecommend *NowGegeRecommend = homePage.nowGegeRecommend;
+        NSLog(@"%@", NowGegeRecommend.title);
+        for (NSString *content in NowGegeRecommend.content) {
+            NSLog(@"%@", content);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败---%@", error);
+    }];
+    
+    
+    
+    
+    
 
 }
 
