@@ -49,7 +49,7 @@ static NSString *const kbannerCellID = @"Cell";
     
     
     _bannerPageControl = [UIPageControl new];
-
+    _bannerPageControl.userInteractionEnabled = NO;
     [self.view addSubview:_bannerPageControl];
 
     [_bannerCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
