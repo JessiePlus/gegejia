@@ -9,7 +9,6 @@
 #import "HomePageViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import <Masonry/Masonry.h>
-#import "REPagedScrollView.h"
 #import <AFHTTPSessionManager.h>
 #import "DataModels.h"
 #import <SDWebImage/UIImageView+WebCache.h>

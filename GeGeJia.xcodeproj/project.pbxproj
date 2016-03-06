@@ -30,7 +30,6 @@
 		D68B19EC1C7C8B23001D6AF9 /* RightNowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19EB1C7C8B23001D6AF9 /* RightNowTableViewController.m */; };
 		D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */; };
 		D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */; };
-		D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */; };
 		D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A171C84928D001D6AF9 /* LoginViewController.m */; };
 		D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */; };
 		D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A1E1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m */; };
@@ -46,6 +45,7 @@
 		D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A381C888025001D6AF9 /* HomePageNSObject.m */; };
 		D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A431C8C15C9001D6AF9 /* BannerCell.m */; };
 		D68B1A471C8C2A63001D6AF9 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */; };
+		D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +113,6 @@
 		D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		D68B1A0E1C8330C0001D6AF9 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
-		D68B1A131C834A6F001D6AF9 /* REPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPagedScrollView.h; sourceTree = "<group>"; };
-		D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPagedScrollView.m; sourceTree = "<group>"; };
 		D68B1A161C84928D001D6AF9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D68B1A171C84928D001D6AF9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -144,6 +142,8 @@
 		D68B1A431C8C15C9001D6AF9 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
 		D68B1A451C8C2A63001D6AF9 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		D68B1A491C8C5C3D001D6AF9 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +275,8 @@
 			children = (
 				D68B199A1C79D1FC001D6AF9 /* LocalizeHelper.h */,
 				D68B199B1C79D1FC001D6AF9 /* LocalizeHelper.m */,
+				D68B1A491C8C5C3D001D6AF9 /* UIViewExt.h */,
+				D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */,
 				D68B199C1C79D1FC001D6AF9 /* Utils.h */,
 				D68B199D1C79D1FC001D6AF9 /* Utils.m */,
 			);
@@ -305,7 +307,6 @@
 				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
-				D68B1A121C834A6F001D6AF9 /* REPagedScrollView */,
 				D68B1A481C8C5407001D6AF9 /* 滚动广告 */,
 			);
 			path = Controllers;
@@ -352,15 +353,6 @@
 				D68B1A0B1C832E7A001D6AF9 /* CAPSPageMenu.m */,
 			);
 			path = PageMenu;
-			sourceTree = "<group>";
-		};
-		D68B1A121C834A6F001D6AF9 /* REPagedScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				D68B1A131C834A6F001D6AF9 /* REPagedScrollView.h */,
-				D68B1A141C834A6F001D6AF9 /* REPagedScrollView.m */,
-			);
-			path = REPagedScrollView;
 			sourceTree = "<group>";
 		};
 		D68B1A191C8493E5001D6AF9 /* LoginAndRegister */ = {
@@ -631,10 +623,10 @@
 				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,
 				D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* TonicTableViewController.m in Sources */,
-				D68B1A151C834A6F001D6AF9 /* REPagedScrollView.m in Sources */,
 				D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
 				D68B19971C79D19D001D6AF9 /* UserViewController.m in Sources */,
+				D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */,
 				D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,

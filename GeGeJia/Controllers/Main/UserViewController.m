@@ -9,6 +9,7 @@
 #import "UserViewController.h"
 #import <Masonry/Masonry.h>
 //#import <MJRefresh/MJRefresh.h>
+#import "UIViewExt.h"
 
 
 static NSString *const kCellID = @"Cell";
@@ -76,20 +77,11 @@ static NSString *const kCellID = @"Cell";
     [_header addSubview:login];
     [_header addSubview:regis];
     
-    
-    UIView *footer = [UIView new];
-
     _header.frame = CGRectMake(0, 0, 375, 200);
     
     _table.tableHeaderView = _header;
-    [_image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_header.mas_centerX);
-        make.top.equalTo(self.view.mas_top).offset(64);
-//        make.width.equalTo(_header.mas_width);
-        make.width.equalTo(@375);
-        make.bottom.equalTo(_header.mas_bottom);
-    }];
-//    _image.frame = _header.bounds;
+    _image.frame = CGRectMake(0, 0, 375, 200);
+
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_header.mas_right).multipliedBy(0.33f);
         make.width.equalTo(@100);
@@ -106,7 +98,7 @@ static NSString *const kCellID = @"Cell";
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-        [self.view layoutIfNeeded];
+//        [self.view layoutIfNeeded];
 
 }
 
@@ -120,24 +112,20 @@ static NSString *const kCellID = @"Cell";
     //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"%f", scrollView.contentOffset.y);
-    if (scrollView.contentOffset.y + 64 < 0) {
-        CGRect rect =_image.frame;
-        CGFloat factor = rect.size.height/200.0f;
-//        NSLog(@"%d, %@", __LINE__, NSStringFromCGRect(rect));
-//        NSLog(@"%d, %f, %f, %f", __LINE__, factor*rect.size.width, factor, rect.size.height);
-//        
-        
-        [_image mas_updateConstraints:^(MASConstraintMaker *make) {
-            
-            make.width.equalTo(@(375*factor));
-        }];
-        [self.view layoutIfNeeded];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat yOff = scrollView.contentOffset.y + 64;
+    if (yOff < 0) {
+        CGFloat oldHeight = 200;
+        CGFloat newHeight = 200 - yOff;
+        CGFloat scale = newHeight / oldHeight;
+        CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
+        _image.transform = transform;
+        _image.top = yOff;
     }
-
-
+    
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int num = -1;
