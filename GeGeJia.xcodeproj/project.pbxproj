@@ -44,6 +44,8 @@
 		D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A341C888025001D6AF9 /* HomePageHotList.m */; };
 		D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */; };
 		D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A381C888025001D6AF9 /* HomePageNSObject.m */; };
+		D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A431C8C15C9001D6AF9 /* BannerCell.m */; };
+		D68B1A471C8C2A63001D6AF9 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,10 @@
 		D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNowGegeRecommend.m; sourceTree = "<group>"; };
 		D68B1A371C888025001D6AF9 /* HomePageNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageNSObject.h; sourceTree = "<group>"; };
 		D68B1A381C888025001D6AF9 /* HomePageNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNSObject.m; sourceTree = "<group>"; };
+		D68B1A421C8C15C9001D6AF9 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
+		D68B1A431C8C15C9001D6AF9 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
+		D68B1A451C8C2A63001D6AF9 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,6 +306,7 @@
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
 				D68B1A121C834A6F001D6AF9 /* REPagedScrollView */,
+				D68B1A481C8C5407001D6AF9 /* 滚动广告 */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +411,17 @@
 				D68B1A281C888010001D6AF9 /* Home */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		D68B1A481C8C5407001D6AF9 /* 滚动广告 */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A421C8C15C9001D6AF9 /* BannerCell.h */,
+				D68B1A431C8C15C9001D6AF9 /* BannerCell.m */,
+				D68B1A451C8C2A63001D6AF9 /* BannerViewController.h */,
+				D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */,
+			);
+			path = "滚动广告";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +615,7 @@
 				D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */,
 				D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */,
 				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
 				D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */,
@@ -606,6 +625,7 @@
 				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
 				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
+				D68B1A471C8C2A63001D6AF9 /* BannerViewController.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,

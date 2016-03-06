@@ -13,20 +13,21 @@
 #import <AFHTTPSessionManager.h>
 #import "DataModels.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BannerViewController.h"
 
-static NSString *const kScrollCellID = @"ScrollCell";
+
 static NSString *const kCellID = @"Cell";
 
 
 @interface HomePageViewController () <UITableViewDataSource, UITableViewDelegate>{
 
 }
-//滚动广告
-//@property (nonatomic) UIPageControl *pageControl;
-@property (nonatomic) REPagedScrollView *scrollView;
+
+
 
 //内容
 @property (nonatomic) UITableView *table;
+@property (nonatomic) BannerViewController *bannerVC;
 
 @end
 
@@ -49,7 +50,6 @@ static NSString *const kCellID = @"Cell";
             [tableView.mj_header endRefreshing];
         });
     }];
-//    [tableView.mj_header ];
     tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
@@ -59,38 +59,24 @@ static NSString *const kCellID = @"Cell";
         });
     }];
     
-    _scrollView = [[REPagedScrollView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    _scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    _scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
     
     
-    UIImageView *banner1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    [_scrollView addPage:banner1];
-    
-    UIImageView *banner2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    [_scrollView addPage:banner2];
-    
-    UIImageView *banner3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    [_scrollView addPage:banner3];
-    
-    UIImageView *banner4 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
-    [_scrollView addPage:banner4];
-    
-    NSArray *banners = @[banner1, banner2, banner3, banner4];
 
-    
+
     [self.view addSubview:_table];
-    _table.tableHeaderView = _scrollView;
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    
-    
-    
-    
-    
-    
+    _bannerVC = [BannerViewController new];
+    [self addChildViewController:_bannerVC];
+    _table.tableHeaderView = _bannerVC.view;
+    [_bannerVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_table.mas_left);
+        make.top.equalTo(_table.mas_top);
+        make.width.equalTo(@375);
+        make.height.equalTo(@100);
+    }];
     
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",
@@ -115,11 +101,9 @@ static NSString *const kCellID = @"Cell";
         
         HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
         
-        
-        [homePage.bannerList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [banners[idx] sd_setImageWithURL:[NSURL URLWithString:((HomePageBannerList *)obj).image]];
-        }];
-        
+        //广告板
+        _bannerVC.bannerList = homePage.bannerList;
+   
         for (HomePageActivityList *activityList in homePage.activityList) {
             NSLog(@"%@", activityList.title);
             
@@ -140,14 +124,11 @@ static NSString *const kCellID = @"Cell";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败---%@", error);
     }];
-    
-    
-    
-    
-    
+   
 
 }
 
+#pragma mark - 内容
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int num = -1;
