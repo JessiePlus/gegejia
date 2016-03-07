@@ -44,7 +44,7 @@
 		D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */; };
 		D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A381C888025001D6AF9 /* HomePageNSObject.m */; };
 		D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A431C8C15C9001D6AF9 /* BannerCell.m */; };
-		D68B1A471C8C2A63001D6AF9 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */; };
+		D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerView.m */; };
 		D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */; };
 		D68B1A4F1C8C6C37001D6AF9 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */; };
 /* End PBXBuildFile section */
@@ -141,8 +141,8 @@
 		D68B1A381C888025001D6AF9 /* HomePageNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNSObject.m; sourceTree = "<group>"; };
 		D68B1A421C8C15C9001D6AF9 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
 		D68B1A431C8C15C9001D6AF9 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
-		D68B1A451C8C2A63001D6AF9 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
-		D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		D68B1A451C8C2A63001D6AF9 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		D68B1A461C8C2A63001D6AF9 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		D68B1A491C8C5C3D001D6AF9 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
@@ -414,8 +414,8 @@
 			children = (
 				D68B1A421C8C15C9001D6AF9 /* BannerCell.h */,
 				D68B1A431C8C15C9001D6AF9 /* BannerCell.m */,
-				D68B1A451C8C2A63001D6AF9 /* BannerViewController.h */,
-				D68B1A461C8C2A63001D6AF9 /* BannerViewController.m */,
+				D68B1A451C8C2A63001D6AF9 /* BannerView.h */,
+				D68B1A461C8C2A63001D6AF9 /* BannerView.m */,
 			);
 			path = "滚动广告";
 			sourceTree = "<group>";
@@ -631,7 +631,7 @@
 				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
 				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
-				D68B1A471C8C2A63001D6AF9 /* BannerViewController.m in Sources */,
+				D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,

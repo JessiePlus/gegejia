@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BannerViewController : UIViewController
+@interface BannerView : UIView
 @property (nonatomic) NSArray *bannerList;
 @end

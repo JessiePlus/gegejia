@@ -12,7 +12,7 @@
 #import <AFHTTPSessionManager.h>
 #import "DataModels.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "BannerViewController.h"
+#import "BannerView.h"
 #import "ActivityCell.h"
 
 
@@ -28,7 +28,7 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 
 //内容
 @property (nonatomic) UITableView *table;
-@property (nonatomic) BannerViewController *bannerVC;
+@property (nonatomic) BannerView *banner;
 @property (nonatomic) NSArray *hotList;
 @property (nonatomic) NSArray *activityList;
 
@@ -73,15 +73,10 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
         make.edges.equalTo(self.view);
     }];
     
-    _bannerVC = [BannerViewController new];
-    [self addChildViewController:_bannerVC];
-    _table.tableHeaderView = _bannerVC.view;
-    [_bannerVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_table.mas_left);
-        make.top.equalTo(_table.mas_top);
-        make.width.equalTo(@375);
-        make.height.equalTo(@100);
-    }];
+    _banner = [BannerView new];
+    _banner.frame = CGRectMake(0, 0, 375, 100);
+    
+    _table.tableHeaderView = _banner;
     
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",
@@ -107,7 +102,7 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
         HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
         
         //广告板
-        _bannerVC.bannerList = homePage.bannerList;
+        _banner.bannerList = homePage.bannerList;
    
 //        for (HomePageActivityList *activityList in homePage.activityList) {
 //            NSLog(@"%@", activityList.title);
