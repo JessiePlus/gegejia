@@ -45,10 +45,11 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     flowLayout.minimumLineSpacing = 10.0f;
     
     //collectionView
-    _mainView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    _mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kOnSaleCellID];
     _mainView.delegate = self;
     _mainView.dataSource = self;
+    _mainView.backgroundColor = [UIColor whiteColor];
 
     
 //    _banner = [BannerView new];
@@ -56,6 +57,9 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     
 
     [self.view addSubview:_mainView];
+    [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",

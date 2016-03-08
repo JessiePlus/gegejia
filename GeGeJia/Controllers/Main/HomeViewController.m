@@ -67,7 +67,8 @@
                                  CAPSPageMenuOptionMenuHeight: @(40.0),
                                  CAPSPageMenuOptionMenuItemWidth: @(90.0),
                                  CAPSPageMenuOptionCenterMenuItems: @(YES),
-                                 CAPSPageMenuOptionEnableHorizontalBounce: @(NO)
+                                 CAPSPageMenuOptionEnableHorizontalBounce: @(NO),
+                                 CAPSPageMenuOptionAddBottomMenuHairline:@(NO)
                                  };
     
     _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:controllers frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 40) options:parameters];
