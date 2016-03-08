@@ -20,16 +20,16 @@ static NSString *const kCellID = @"Cell";
 static NSString *const kOnSaleCellID = @"OnSaleCell";
 
 
-@interface HomePageViewController () <UITableViewDataSource, UITableViewDelegate>{
+@interface HomePageViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>{
 
 }
 
 
 
 //内容
-@property (nonatomic) UITableView *table;
-@property (nonatomic) BannerView *banner;
-@property (nonatomic) NSArray *hotList;
+@property (nonatomic) UICollectionView *mainView;//主视图
+//@property (nonatomic) BannerView *banner;
+//@property (nonatomic) NSArray *hotList;
 @property (nonatomic) NSArray *activityList;
 
 @end
@@ -39,44 +39,23 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    _table = [UITableView new];
-    _table.delegate = self;
-    _table.dataSource = self;
-    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellID];
-    [_table registerClass:[ActivityCell class] forCellReuseIdentifier:kOnSaleCellID];
+    //layout
+    UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+    flowLayout.minimumInteritemSpacing = 10.0f;
+    flowLayout.minimumLineSpacing = 10.0f;
+    
+    //collectionView
+    _mainView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kOnSaleCellID];
+    _mainView.delegate = self;
+    _mainView.dataSource = self;
 
     
-    __unsafe_unretained UITableView *tableView = _table;
-    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [tableView.mj_header endRefreshing];
-        });
-    }];
-    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [tableView.mj_footer endRefreshing];
-        });
-    }];
-    
-    
+//    _banner = [BannerView new];
+//    _banner.frame = CGRectMake(0, 0, 375, 200);
     
 
-
-    [self.view addSubview:_table];
-    [_table mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    
-    _banner = [BannerView new];
-    _banner.frame = CGRectMake(0, 0, 375, 100);
-    
-    _table.tableHeaderView = _banner;
+    [self.view addSubview:_mainView];
     
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",
@@ -102,7 +81,7 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
         HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
         
         //广告板
-        _banner.bannerList = homePage.bannerList;
+//        _banner.bannerList = homePage.bannerList;
    
 //        for (HomePageActivityList *activityList in homePage.activityList) {
 //            NSLog(@"%@", activityList.title);
@@ -122,7 +101,8 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 //        for (NSString *content in NowGegeRecommend.content) {
 //            NSLog(@"%@", content);
 //        }
-        [_table reloadData];
+        NSLog(@"%ld", [_activityList count]);
+        [_mainView reloadData];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -133,33 +113,41 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 }
 
 #pragma mark - 内容
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return ((HomePageActivityList *)_activityList[section]).title;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   return [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]/2;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]/2, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]/2);
+    return size;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [((HomePageActivityList *)_activityList[section]).content count];
-
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ActivityCell *cell =
+    (ActivityCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kOnSaleCellID
+                                                                                forIndexPath:indexPath];
+    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image]];
+    
+    cell.contentView.backgroundColor = [UIColor yellowColor];
+    NSLog(@"%ld, %ld, %@, %@", indexPath.section, indexPath.item, NSStringFromCGRect(cell.contentView.frame), NSStringFromCGRect(cell.image.frame));
+    
+    
+    return cell;
+}
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return [_activityList count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+// The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//
+//}
 
-    if (indexPath.section == 0) {
-        ActivityCell *cell = [_table dequeueReusableCellWithIdentifier:kOnSaleCellID forIndexPath:indexPath];
-        [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image]];
-        return cell;
-    } else {
-        UITableViewCell *cell = [_table dequeueReusableCellWithIdentifier:kCellID forIndexPath:indexPath];
-        return cell;
-    }
-    
-}
+
+
 
 @end

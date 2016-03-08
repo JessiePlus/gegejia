@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityCell : UITableViewCell
-@property (nonatomic, strong) UIImageView *image;
+@interface ActivityCell : UICollectionViewCell
+@property (nonatomic) UIImageView *image;
 
 @end

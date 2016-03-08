@@ -32,7 +32,7 @@ static NSString *const kbannerCellID = @"Cell";
     self = [super initWithFrame:frame];
     if (self) {
         UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
-        flowLayout.itemSize = CGSizeMake(375, 100);
+        flowLayout.itemSize = CGSizeMake(375, 200);
         flowLayout.minimumInteritemSpacing = 0.0f;
         flowLayout.minimumLineSpacing = 0.0f;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -61,7 +61,7 @@ static NSString *const kbannerCellID = @"Cell";
             make.bottom.equalTo(self.mas_bottom);
             make.centerX.equalTo(self.mas_centerX);
             make.height.equalTo(@20);
-            make.width.equalTo(@100);
+            make.width.equalTo(@200);
         }];
     
     }

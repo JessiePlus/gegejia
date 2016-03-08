@@ -47,6 +47,7 @@
 		D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerView.m */; };
 		D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */; };
 		D68B1A4F1C8C6C37001D6AF9 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */; };
+		D68B1A531C8D2264001D6AF9 /* ActivityImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A521C8D2264001D6AF9 /* ActivityImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,8 @@
 		D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
 		D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		D68B1A511C8D2264001D6AF9 /* ActivityImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityImage.h; sourceTree = "<group>"; };
+		D68B1A521C8D2264001D6AF9 /* ActivityImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityImage.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -306,11 +309,11 @@
 		D68B19B61C7A05BC001D6AF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A4C1C8C6BC0001D6AF9 /* 活动 */,
 				D68B19D21C7B4840001D6AF9 /* Home */,
 				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
+				D68B1A4C1C8C6BC0001D6AF9 /* 活动 */,
 				D68B1A481C8C5407001D6AF9 /* 滚动广告 */,
 			);
 			path = Controllers;
@@ -327,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				D68B1A411C891B1A001D6AF9 /* Json */,
+				D68B1A501C8D222E001D6AF9 /* 活动 */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,8 +338,8 @@
 		D68B19D21C7B4840001D6AF9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */,
 				D68B19E71C7C8AAB001D6AF9 /* FinallySnappedTableViewController.h */,
+				D68B19E81C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m */,
 				D68B19D61C7B48E1001D6AF9 /* FoodTableViewController.h */,
 				D68B19D71C7B48E1001D6AF9 /* FoodTableViewController.m */,
 				D68B1A0D1C8330C0001D6AF9 /* HomePageViewController.h */,
@@ -426,7 +430,16 @@
 				D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */,
 				D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */,
 			);
-			name = "活动";
+			path = "活动";
+			sourceTree = "<group>";
+		};
+		D68B1A501C8D222E001D6AF9 /* 活动 */ = {
+			isa = PBXGroup;
+			children = (
+				D68B1A511C8D2264001D6AF9 /* ActivityImage.h */,
+				D68B1A521C8D2264001D6AF9 /* ActivityImage.m */,
+			);
+			path = "活动";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,7 +512,7 @@
 				TargetAttributes = {
 					D68B19511C79D07D001D6AF9 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = U3ANN6J6MB;
+						DevelopmentTeam = RVR6857V2A;
 					};
 					D68B196A1C79D07D001D6AF9 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -643,6 +656,7 @@
 				D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */,
 				D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
+				D68B1A531C8D2264001D6AF9 /* ActivityImage.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
 				D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* HomeViewController.m in Sources */,
@@ -723,8 +737,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dinglin1991@yeah.net (9DVU6M2CCS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -746,6 +760,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "713e2854-c53c-4e1d-bbbf-8f9181dde03e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -767,8 +782,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dinglin1991@yeah.net (9DVU6M2CCS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -783,6 +798,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "713e2854-c53c-4e1d-bbbf-8f9181dde03e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -794,10 +810,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
 				INFOPLIST_FILE = GeGeJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HangZhou.gegejia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiongmai.XMeye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "713e2854-c53c-4e1d-bbbf-8f9181dde03e";
 			};
 			name = Debug;
 		};
@@ -807,10 +825,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youlong Hu (587Q2PTA7B)";
 				INFOPLIST_FILE = GeGeJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HangZhou.gegejia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiongmai.XMeye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "713e2854-c53c-4e1d-bbbf-8f9181dde03e";
 			};
 			name = Release;
 		};
