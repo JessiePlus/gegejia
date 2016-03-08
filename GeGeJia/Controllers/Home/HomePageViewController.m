@@ -19,6 +19,7 @@
 static NSString *const kCellID = @"Cell";
 static NSString *const kOnSaleCellID = @"OnSaleCell";
 
+#define kSCREENFACTOR ([UIScreen mainScreen].bounds.size.width/710.0f)
 
 @interface HomePageViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>{
 
@@ -41,8 +42,8 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 
     //layout
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
-    flowLayout.minimumInteritemSpacing = 10.0f;
-    flowLayout.minimumLineSpacing = 10.0f;
+    flowLayout.minimumInteritemSpacing = 0.0f;
+    flowLayout.minimumLineSpacing = 5.0f;
     
     //collectionView
     _mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
@@ -119,7 +120,7 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
 #pragma mark - 内容
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]/2, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]/2);
+    CGSize size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]*kSCREENFACTOR, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]*kSCREENFACTOR);
     return size;
 }
 
@@ -135,7 +136,7 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image]];
     
     cell.contentView.backgroundColor = [UIColor yellowColor];
-    NSLog(@"%ld, %ld, %@, %@", indexPath.section, indexPath.item, NSStringFromCGRect(cell.contentView.frame), NSStringFromCGRect(cell.image.frame));
+//    NSLog(@"%ld, %ld, %@, %@", indexPath.section, indexPath.item, NSStringFromCGRect(cell.contentView.frame), NSStringFromCGRect(cell.image.frame));
     
     
     return cell;
