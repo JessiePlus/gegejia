@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80ED6F163C24409904DA1971 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6E5AD3EDFDE6839F518843 /* libPods.a */; };
+		D611C38F1C8F2181003EE906 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C38E1C8F2181003EE906 /* Header.m */; };
 		D68B19571C79D07D001D6AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19561C79D07D001D6AF9 /* main.m */; };
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
@@ -70,6 +71,8 @@
 /* Begin PBXFileReference section */
 		7E6E5AD3EDFDE6839F518843 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		892D5667FBF478EA38543B2A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D611C38D1C8F2181003EE906 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		D611C38E1C8F2181003EE906 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
 		D68B19521C79D07D001D6AF9 /* GeGeJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeGeJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B19561C79D07D001D6AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D68B19661C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -429,6 +432,8 @@
 			children = (
 				D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */,
 				D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */,
+				D611C38D1C8F2181003EE906 /* Header.h */,
+				D611C38E1C8F2181003EE906 /* Header.m */,
 			);
 			path = "活动";
 			sourceTree = "<group>";
@@ -631,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */,
+				D611C38F1C8F2181003EE906 /* Header.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
 				D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */,

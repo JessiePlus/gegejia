@@ -14,12 +14,15 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BannerView.h"
 #import "ActivityCell.h"
+#import "Header.h"
 
 
-static NSString *const kCellID = @"Cell";
-static NSString *const kOnSaleCellID = @"OnSaleCell";
-
-#define kSCREENFACTOR ([UIScreen mainScreen].bounds.size.width/710.0f)
+static NSString *const kCellID = @"CellID";
+static NSString *const kOnSaleCellID = @"OnSaleCellID";
+static NSString *const kCollectionViewHeaderIndentifier = @"CollectionViewHeaderID";
+static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooterID";
+#define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
+#define kSCREENFACTOR (kSCREENWIDTH/710.0f)
 
 @interface HomePageViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>{
 
@@ -45,9 +48,12 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     flowLayout.minimumInteritemSpacing = 0.0f;
     flowLayout.minimumLineSpacing = 5.0f;
     
+    
     //collectionView
     _mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kOnSaleCellID];
+    [_mainView registerClass:[Header class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionViewHeaderIndentifier];
+    
     _mainView.delegate = self;
     _mainView.dataSource = self;
     _mainView.backgroundColor = [UIColor whiteColor];
@@ -133,9 +139,9 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     ActivityCell *cell =
     (ActivityCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kOnSaleCellID
                                                                                 forIndexPath:indexPath];
-    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image]];
+    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image] placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
     
-    cell.contentView.backgroundColor = [UIColor yellowColor];
+//    cell.contentView.backgroundColor = [UIColor yellowColor];
 //    NSLog(@"%ld, %ld, %@, %@", indexPath.section, indexPath.item, NSStringFromCGRect(cell.contentView.frame), NSStringFromCGRect(cell.image.frame));
     
     
@@ -147,12 +153,37 @@ static NSString *const kOnSaleCellID = @"OnSaleCell";
     return [_activityList count];
 }
 
-// The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//
-//}
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+          viewForSupplementaryElementOfKind:(NSString *)kind
+                                atIndexPath:(NSIndexPath *)indexPath{
 
+    NSString *resueIndentifier = kCollectionViewHeaderIndentifier;
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        resueIndentifier = kCollectionViewFooterIndentifier;
+    }
+    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:resueIndentifier forIndexPath:indexPath];
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        Header *header = (Header *)view;
+        header.label.text = ((HomePageActivityList *)_activityList[indexPath.section]).title;
+    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+        
+    }
+    return  view;
+}
 
+-(CGSize) collectionView:(UICollectionView *) collectionView
+                  layout:(UICollectionViewLayout *) collectionViewLayout
+referenceSizeForHeaderInSection:(NSInteger) section
+{
+    if (((HomePageActivityList *)_activityList[section]).title.length == 0) {
+        return CGSizeZero;
+    } else {
+        return CGSizeMake(kSCREENWIDTH, 30.0f);
+    }
+}
 
+-(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeZero;
+}
 
 @end

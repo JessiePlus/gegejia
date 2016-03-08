@@ -29,13 +29,15 @@
 
 - (void)initSubviews
 {
+
+    
     _image = [UIImageView new];
     _image.userInteractionEnabled = YES;
     _image.contentMode = UIViewContentModeScaleToFill;
 //    _image.frame = self.contentView.bounds;
 //    NSLog(@"%d, %@", __LINE__, NSStringFromCGRect((_image.frame)));
     [self.contentView addSubview:_image];
-    _image.backgroundColor = [UIColor greenColor];
+//    _image.backgroundColor = [UIColor greenColor];
 }
 
 - (void)setLayout
