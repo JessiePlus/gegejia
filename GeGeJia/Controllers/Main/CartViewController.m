@@ -33,6 +33,7 @@
     imageView.animatedImage = image;
     
     UIButton *btn = [UIButton new];
+    [btn addTarget:self action:@selector(explore:) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"去逛逛" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor titleColor] forState:UIControlStateNormal];
     btn.layer.borderWidth  = 1.0f;
@@ -53,6 +54,10 @@
         make.centerX.equalTo(imageView.mas_centerX);
     }];
     
+}
+-(void)explore:(id)sender {
+    self.tabBarController.selectedIndex = 0;
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,6 +12,7 @@
 + (UIColor *)titleColor;
 + (UIColor *)themeColor;
 + (UIColor *)moneyColor;
++ (UIColor *)lineColor;
 + (UIColor *)colorWithHex:(int)hexValue alpha:(CGFloat)alpha;
 + (UIColor *)colorWithHex:(int)hexValue;
 @end

@@ -11,6 +11,10 @@
 		D611C38F1C8F2181003EE906 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C38E1C8F2181003EE906 /* Header.m */; };
 		D611C3961C8FAA91003EE906 /* TodayHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3951C8FAA91003EE906 /* TodayHotCell.m */; };
 		D611C3991C8FB916003EE906 /* TodayHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3981C8FB916003EE906 /* TodayHotView.m */; };
+		D611C3A01C900B60003EE906 /* GridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C39F1C900B60003EE906 /* GridItem.m */; };
+		D611C3A51C906CF2003EE906 /* DoubleLineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A21C906CF1003EE906 /* DoubleLineGridCell.m */; };
+		D611C3A61C906CF2003EE906 /* SingleLineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */; };
+		D611C3A91C907CE3003EE906 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A81C907CE3003EE906 /* LoginCell.m */; };
 		D68B19571C79D07D001D6AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19561C79D07D001D6AF9 /* main.m */; };
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
@@ -78,6 +82,14 @@
 		D611C3951C8FAA91003EE906 /* TodayHotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayHotCell.m; sourceTree = "<group>"; };
 		D611C3971C8FB916003EE906 /* TodayHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotView.h; sourceTree = "<group>"; };
 		D611C3981C8FB916003EE906 /* TodayHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayHotView.m; sourceTree = "<group>"; };
+		D611C39E1C900B60003EE906 /* GridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridItem.h; sourceTree = "<group>"; };
+		D611C39F1C900B60003EE906 /* GridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridItem.m; sourceTree = "<group>"; };
+		D611C3A11C906CF1003EE906 /* DoubleLineGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLineGridCell.h; sourceTree = "<group>"; };
+		D611C3A21C906CF1003EE906 /* DoubleLineGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLineGridCell.m; sourceTree = "<group>"; };
+		D611C3A31C906CF1003EE906 /* SingleLineGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLineGridCell.h; sourceTree = "<group>"; };
+		D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLineGridCell.m; sourceTree = "<group>"; };
+		D611C3A71C907CE3003EE906 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		D611C3A81C907CE3003EE906 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		D68B19521C79D07D001D6AF9 /* GeGeJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeGeJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B19561C79D07D001D6AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D68B19661C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,6 +225,21 @@
 			path = "今日最热";
 			sourceTree = "<group>";
 		};
+		D611C39A1C9004CB003EE906 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				D611C3A11C906CF1003EE906 /* DoubleLineGridCell.h */,
+				D611C3A21C906CF1003EE906 /* DoubleLineGridCell.m */,
+				D611C39E1C900B60003EE906 /* GridItem.h */,
+				D611C39F1C900B60003EE906 /* GridItem.m */,
+				D611C3A31C906CF1003EE906 /* SingleLineGridCell.h */,
+				D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */,
+				D68B19921C79D19D001D6AF9 /* UserViewController.h */,
+				D68B19931C79D19D001D6AF9 /* UserViewController.m */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
 		D68B19491C79D07D001D6AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +336,7 @@
 		D68B19B41C7A0592001D6AF9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D611C39A1C9004CB003EE906 /* 我的 */,
 				D68B198C1C79D19D001D6AF9 /* CartViewController.h */,
 				D68B198D1C79D19D001D6AF9 /* CartViewController.m */,
 				D68B198E1C79D19D001D6AF9 /* HomeViewController.h */,
@@ -317,8 +345,6 @@
 				D68B19911C79D19D001D6AF9 /* MallViewController.m */,
 				D68B1A201C85D3F5001D6AF9 /* SearchViewController.h */,
 				D68B1A211C85D3F5001D6AF9 /* SearchViewController.m */,
-				D68B19921C79D19D001D6AF9 /* UserViewController.h */,
-				D68B19931C79D19D001D6AF9 /* UserViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -383,6 +409,8 @@
 		D68B1A191C8493E5001D6AF9 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
+				D611C3A71C907CE3003EE906 /* LoginCell.h */,
+				D611C3A81C907CE3003EE906 /* LoginCell.m */,
 				D68B1A161C84928D001D6AF9 /* LoginViewController.h */,
 				D68B1A171C84928D001D6AF9 /* LoginViewController.m */,
 				D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */,
@@ -642,8 +670,10 @@
 			files = (
 				D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */,
 				D611C38F1C8F2181003EE906 /* Header.m in Sources */,
+				D611C3A01C900B60003EE906 /* GridItem.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
+				D611C3A61C906CF2003EE906 /* SingleLineGridCell.m in Sources */,
 				D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */,
 				D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */,
 				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
@@ -657,10 +687,12 @@
 				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
 				D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
+				D611C3A91C907CE3003EE906 /* LoginCell.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
 				D611C3991C8FB916003EE906 /* TodayHotView.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,
 				D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */,
+				D611C3A51C906CF2003EE906 /* DoubleLineGridCell.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* TonicTableViewController.m in Sources */,
 				D68B1A221C85D3F5001D6AF9 /* SearchViewController.m in Sources */,
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,

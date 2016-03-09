@@ -10,9 +10,16 @@
 #import <Masonry/Masonry.h>
 //#import <MJRefresh/MJRefresh.h>
 #import "UIViewExt.h"
+#import "UIColor+Util.h"
+#import "SingleLineGridCell.h"
+#import "DoubleLineGridCell.h"
+#import "GridItem.h"
+#import "LoginViewController.h"
 
+static NSString *const kCell = @"CellID";
+static NSString *const kSingleLineGridViewCell = @"kSingleLineGridViewCellID";
+static NSString *const kDoubleLineGridViewCell = @"kDoubleLineGridViewCellID";
 
-static NSString *const kCellID = @"Cell";
 
 @interface UserViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *table;
@@ -29,30 +36,17 @@ static NSString *const kCellID = @"Cell";
     self.navigationItem.title = @"我的";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(pushSettingViewController)];
     
-    
-    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+
     _table = [UITableView new];
     _table.delegate = self;
     _table.dataSource = self;
-    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellID];
+    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:kCell];
+    [_table registerClass:[SingleLineGridCell class] forCellReuseIdentifier:kSingleLineGridViewCell];
+    [_table registerClass:[DoubleLineGridCell class] forCellReuseIdentifier:kDoubleLineGridViewCell];
+
+
     
-//    __unsafe_unretained UITableView *tableView = _table;
-//    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        // 进入刷新状态后会自动调用这个block
-//        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            // 结束刷新
-//            [tableView.mj_header endRefreshing];
-//        });
-//    }];
-//    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-//        // 进入刷新状态后会自动调用这个block
-//        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            // 结束刷新
-//            [tableView.mj_footer endRefreshing];
-//        });
-//    }];
     
     
     [self.view addSubview:_table];
@@ -63,6 +57,7 @@ static NSString *const kCellID = @"Cell";
     UIButton *login = [UIButton new];
     [login setTitle:@"登录" forState:UIControlStateNormal];
     [login setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [login addTarget:self action:@selector(loginBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     login.layer.borderWidth  = 1.0f;
     login.layer.borderColor  = [UIColor whiteColor].CGColor;
     login.layer.cornerRadius = 2.0f;
@@ -80,6 +75,10 @@ static NSString *const kCellID = @"Cell";
     _header.frame = CGRectMake(0, 0, 375, 200);
     
     _table.tableHeaderView = _header;
+    UIView *footer = [[UIView alloc]init];
+    footer.backgroundColor = [UIColor lineColor];
+    _table.tableFooterView = footer;
+    _table.backgroundColor = [UIColor lineColor];
     _image.frame = CGRectMake(0, 0, 375, 200);
 
     [login mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -98,8 +97,6 @@ static NSString *const kCellID = @"Cell";
     [_table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-//        [self.view layoutIfNeeded];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,23 +125,71 @@ static NSString *const kCellID = @"Cell";
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int num = -1;
-    if (section == 0)
-        num = 1;
-    else if (section == 1)
-        num = 3;
-    
-    return num;
+    return 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 40;
+    } else if (indexPath.section == 1) {
+        return 80;
+    } else if (indexPath.section == 2){
+        return 200;
+    } else {
+        return 0;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0;
+    }else if (section == 1)
+        return 0;
+    else
+        return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [_table dequeueReusableCellWithIdentifier:kCellID forIndexPath:indexPath];
     
-    return cell;
+    if (indexPath.section == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
+        
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.text = @"全部订单";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.layer.borderWidth = 0.3f;
+        cell.layer.borderColor  = [UIColor lineColor].CGColor;
+        return cell;
+
+    } else if (indexPath.section == 1) {
+        SingleLineGridCell *cell = [tableView dequeueReusableCellWithIdentifier:kSingleLineGridViewCell forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.layer.borderWidth = 0.3f;
+        cell.layer.borderColor  = [UIColor lineColor].CGColor;
+//        NSLog(@"--%f", cell.contentView.bounds.size.height);
+//        cell.backgroundColor = [UIColor greenColor];
+
+        return cell;
+
+    } else {
+        DoubleLineGridCell *cell = [tableView dequeueReusableCellWithIdentifier:kDoubleLineGridViewCell forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.layer.borderWidth = 0.3f;
+        cell.layer.borderColor  = [UIColor lineColor].CGColor;
+//        NSLog(@"--%f", cell.contentView.bounds.size.height);
+        //        cell.backgroundColor = [UIColor greenColor];
+        
+        return cell;
+    }
+}
+
+- (void)loginBtnClicked:(id)sender {
+    LoginViewController *loginVC = [LoginViewController new];
+    [self.navigationController pushViewController:loginVC animated:NO];
 }
 
 @end

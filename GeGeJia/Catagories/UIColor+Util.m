@@ -12,7 +12,7 @@
 #pragma mark - theme colors
 + (UIColor *)titleColor
 {
-    return [UIColor colorWithRed:238/255.0f  green:100/255.0f  blue:87/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:234/255.0f  green:75/255.0f  blue:66/255.0f alpha:1.0f];
 }
 + (UIColor *)themeColor
 {
@@ -21,6 +21,10 @@
 + (UIColor *)moneyColor
 {
     return [UIColor colorWithRed:207/255.0f  green:52/255.0f  blue:41/255.0f alpha:1.0f];
+}
++ (UIColor *)lineColor
+{
+    return [UIColor colorWithRed:245/255.0f  green:245/255.0f  blue:245/255.0f alpha:1.0f];
 }
 + (UIColor *)colorWithHex:(int)hexValue alpha:(CGFloat)alpha
 {
