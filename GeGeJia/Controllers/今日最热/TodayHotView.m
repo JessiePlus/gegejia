@@ -70,7 +70,7 @@ static NSString *const kTodayHotCellID = @"Cell";
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TodayHotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTodayHotCellID forIndexPath:indexPath];
-    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageHotList *)_hotList[indexPath.item]).image]];
+    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageHotList *)_hotList[indexPath.item]).image]placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
     
     cell.title.text = ((HomePageHotList *)_hotList[indexPath.item]).title;
     cell.title.font = [UIFont fontWithName:@"HelveticaNeue" size:10];

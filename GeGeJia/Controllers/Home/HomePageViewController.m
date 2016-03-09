@@ -121,7 +121,6 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 //        for (NSString *content in NowGegeRecommend.content) {
 //            NSLog(@"%@", content);
 //        }
-        NSLog(@"%ld", [_activityList count]);
         [_mainView reloadData];
         
         

@@ -50,7 +50,6 @@
 		D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerView.m */; };
 		D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */; };
 		D68B1A4F1C8C6C37001D6AF9 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */; };
-		D68B1A531C8D2264001D6AF9 /* ActivityImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A521C8D2264001D6AF9 /* ActivityImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,8 +156,6 @@
 		D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
 		D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
-		D68B1A511C8D2264001D6AF9 /* ActivityImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityImage.h; sourceTree = "<group>"; };
-		D68B1A521C8D2264001D6AF9 /* ActivityImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityImage.m; sourceTree = "<group>"; };
 		F25272F8D16CDE0E4253F4FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				D68B1A411C891B1A001D6AF9 /* Json */,
-				D68B1A501C8D222E001D6AF9 /* 活动 */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,7 +400,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D68B1A281C888010001D6AF9 /* Home */ = {
+		D68B1A281C888010001D6AF9 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
 				D68B1A291C888025001D6AF9 /* BaseNSObject.h */,
@@ -423,13 +419,13 @@
 				D68B1A351C888025001D6AF9 /* HomePageNowGegeRecommend.h */,
 				D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */,
 			);
-			path = Home;
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		D68B1A411C891B1A001D6AF9 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A281C888010001D6AF9 /* Home */,
+				D68B1A281C888010001D6AF9 /* HomePage */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -452,15 +448,6 @@
 				D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */,
 				D611C38D1C8F2181003EE906 /* Header.h */,
 				D611C38E1C8F2181003EE906 /* Header.m */,
-			);
-			path = "活动";
-			sourceTree = "<group>";
-		};
-		D68B1A501C8D222E001D6AF9 /* 活动 */ = {
-			isa = PBXGroup;
-			children = (
-				D68B1A511C8D2264001D6AF9 /* ActivityImage.h */,
-				D68B1A521C8D2264001D6AF9 /* ActivityImage.m */,
 			);
 			path = "活动";
 			sourceTree = "<group>";
@@ -682,7 +669,6 @@
 				D611C3961C8FAA91003EE906 /* TodayHotCell.m in Sources */,
 				D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
-				D68B1A531C8D2264001D6AF9 /* ActivityImage.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
 				D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* HomeViewController.m in Sources */,
