@@ -15,10 +15,12 @@
 #import "BannerView.h"
 #import "ActivityCell.h"
 #import "Header.h"
+#import "TodayHotView.h"
 
 
 static NSString *const kCellID = @"CellID";
-static NSString *const kOnSaleCellID = @"OnSaleCellID";
+static NSString *const kActivityCellID = @"ActivityCellID";
+static NSString *const kTodayHotCellID = @"TodayHotCellID";
 static NSString *const kCollectionViewHeaderIndentifier = @"CollectionViewHeaderID";
 static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooterID";
 #define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
@@ -33,7 +35,7 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 //内容
 @property (nonatomic) UICollectionView *mainView;//主视图
 //@property (nonatomic) BannerView *banner;
-//@property (nonatomic) NSArray *hotList;
+@property (nonatomic) NSArray *hotList;
 @property (nonatomic) NSArray *activityList;
 
 @end
@@ -43,15 +45,17 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    //layout
+    
+    
+    //1.
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.minimumInteritemSpacing = 0.0f;
     flowLayout.minimumLineSpacing = 5.0f;
     
-    
     //collectionView
     _mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-    [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kOnSaleCellID];
+    [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kActivityCellID];
+    [_mainView registerClass:[TodayHotView class] forCellWithReuseIdentifier:kTodayHotCellID];
     [_mainView registerClass:[Header class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionViewHeaderIndentifier];
     
     _mainView.delegate = self;
@@ -67,6 +71,11 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
     [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    //2.
+    
+    
+    
+    
     
     NSString *URLString = @"http://app.gegejia.com/yangege/appNative/resource/homeList";
     NSDictionary *parameters = @{@"os": @"1",
@@ -105,7 +114,7 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 //        for (HomePageHotList *hotList in homePage.hotList) {
 //            NSLog(@"%d, %@", __LINE__, hotList);
 //        }
-//        _hotList = homePage.hotList;
+        _hotList = homePage.hotList;
         
 //        HomePageNowGegeRecommend *NowGegeRecommend = homePage.nowGegeRecommend;
 //        NSLog(@"%@", NowGegeRecommend.title);
@@ -126,31 +135,52 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 #pragma mark - 内容
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]*kSCREENFACTOR, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]*kSCREENFACTOR);
+    CGSize size;
+    if (indexPath.section < _activityList.count) {
+        size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]*kSCREENFACTOR, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]*kSCREENFACTOR);
+    } else if (indexPath.section == _activityList.count){
+        size = CGSizeMake(kSCREENWIDTH, 200);
+    }
     return size;
+    
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [((HomePageActivityList *)_activityList[section]).content count];
+    
+    if (section < _activityList.count) {
+        return [((HomePageActivityList *)_activityList[section]).content count];
+    } else if (section == _activityList.count){
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ActivityCell *cell =
-    (ActivityCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kOnSaleCellID
-                                                                                forIndexPath:indexPath];
-    [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image] placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
-    
-//    cell.contentView.backgroundColor = [UIColor yellowColor];
-//    NSLog(@"%ld, %ld, %@, %@", indexPath.section, indexPath.item, NSStringFromCGRect(cell.contentView.frame), NSStringFromCGRect(cell.image.frame));
-    
-    
-    return cell;
+    if (indexPath.section < _activityList.count) {
+        ActivityCell *cell =
+        (ActivityCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kActivityCellID
+                                                                  forIndexPath:indexPath];
+        [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image] placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
+        
+        return cell;
+    } else if (indexPath.section == _activityList.count){
+        TodayHotView *cell =
+        (TodayHotView *)[collectionView dequeueReusableCellWithReuseIdentifier:kTodayHotCellID
+                                                                  forIndexPath:indexPath];
+        cell.hotList = _hotList;
+        return cell;
+    }
+    else {
+        return nil;
+    }
 }
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [_activityList count];
+    return ([_activityList count] + ((_hotList.count > 0)?1:0));
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
@@ -164,7 +194,11 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
     UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:resueIndentifier forIndexPath:indexPath];
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         Header *header = (Header *)view;
-        header.label.text = ((HomePageActivityList *)_activityList[indexPath.section]).title;
+        if (indexPath.section < _activityList.count) {
+            header.label.text = ((HomePageActivityList *)_activityList[indexPath.section]).title;
+        } else if (indexPath.section == _activityList.count) {
+            header.label.text = @"今日最热";
+        }
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
         
     }
@@ -175,10 +209,16 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
                   layout:(UICollectionViewLayout *) collectionViewLayout
 referenceSizeForHeaderInSection:(NSInteger) section
 {
-    if (((HomePageActivityList *)_activityList[section]).title.length == 0) {
-        return CGSizeZero;
+    if (section < _activityList.count) {
+        if (((HomePageActivityList *)_activityList[section]).title.length == 0) {
+            return CGSizeZero;
+        } else {
+            return CGSizeMake(kSCREENWIDTH, 20.0f);
+        }
+    } else if (section == _activityList.count) {
+        return CGSizeMake(kSCREENWIDTH, 20.0f);
     } else {
-        return CGSizeMake(kSCREENWIDTH, 30.0f);
+        return CGSizeZero;
     }
 }
 

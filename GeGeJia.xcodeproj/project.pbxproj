@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		80ED6F163C24409904DA1971 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6E5AD3EDFDE6839F518843 /* libPods.a */; };
 		D611C38F1C8F2181003EE906 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C38E1C8F2181003EE906 /* Header.m */; };
+		D611C3961C8FAA91003EE906 /* TodayHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3951C8FAA91003EE906 /* TodayHotCell.m */; };
+		D611C3991C8FB916003EE906 /* TodayHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3981C8FB916003EE906 /* TodayHotView.m */; };
 		D68B19571C79D07D001D6AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19561C79D07D001D6AF9 /* main.m */; };
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
@@ -73,6 +75,10 @@
 		892D5667FBF478EA38543B2A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D611C38D1C8F2181003EE906 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		D611C38E1C8F2181003EE906 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		D611C3941C8FAA91003EE906 /* TodayHotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotCell.h; sourceTree = "<group>"; };
+		D611C3951C8FAA91003EE906 /* TodayHotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayHotCell.m; sourceTree = "<group>"; };
+		D611C3971C8FB916003EE906 /* TodayHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotView.h; sourceTree = "<group>"; };
+		D611C3981C8FB916003EE906 /* TodayHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayHotView.m; sourceTree = "<group>"; };
 		D68B19521C79D07D001D6AF9 /* GeGeJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeGeJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B19561C79D07D001D6AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D68B19661C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +205,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D611C3901C8FA978003EE906 /* 今日最热 */ = {
+			isa = PBXGroup;
+			children = (
+				D611C3941C8FAA91003EE906 /* TodayHotCell.h */,
+				D611C3951C8FAA91003EE906 /* TodayHotCell.m */,
+				D611C3971C8FB916003EE906 /* TodayHotView.h */,
+				D611C3981C8FB916003EE906 /* TodayHotView.m */,
+			);
+			path = "今日最热";
+			sourceTree = "<group>";
+		};
 		D68B19491C79D07D001D6AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +333,7 @@
 				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
+				D611C3901C8FA978003EE906 /* 今日最热 */,
 				D68B1A4C1C8C6BC0001D6AF9 /* 活动 */,
 				D68B1A481C8C5407001D6AF9 /* 滚动广告 */,
 			);
@@ -653,6 +671,7 @@
 				D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
+				D611C3991C8FB916003EE906 /* TodayHotView.m in Sources */,
 				D68B19E91C7C8AAB001D6AF9 /* FinallySnappedTableViewController.m in Sources */,
 				D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */,
 				D68B19E31C7C89E2001D6AF9 /* TonicTableViewController.m in Sources */,
@@ -660,6 +679,7 @@
 				D68B19A21C79D210001D6AF9 /* UIColor+Util.m in Sources */,
 				D68B19971C79D19D001D6AF9 /* UserViewController.m in Sources */,
 				D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */,
+				D611C3961C8FAA91003EE906 /* TodayHotCell.m in Sources */,
 				D68B19D81C7B48E1001D6AF9 /* FoodTableViewController.m in Sources */,
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
 				D68B1A531C8D2264001D6AF9 /* ActivityImage.m in Sources */,

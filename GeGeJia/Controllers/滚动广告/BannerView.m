@@ -37,7 +37,6 @@ static NSString *const kbannerCellID = @"Cell";
         flowLayout.minimumLineSpacing = 0.0f;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _bannerCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _bannerCollectionView.collectionViewLayout = flowLayout;
         [_bannerCollectionView registerClass:[BannerCell class] forCellWithReuseIdentifier:kbannerCellID];
         
         _bannerCollectionView.dataSource = self;
@@ -46,9 +45,6 @@ static NSString *const kbannerCellID = @"Cell";
         _bannerCollectionView.bounces = NO;
         _bannerCollectionView.showsHorizontalScrollIndicator = NO;
         [self addSubview:_bannerCollectionView];
-        
-        _bannerCollectionView.delegate = self;
-        _bannerCollectionView.dataSource = self;
         
         _bannerPageControl = [UIPageControl new];
         _bannerPageControl.userInteractionEnabled = NO;

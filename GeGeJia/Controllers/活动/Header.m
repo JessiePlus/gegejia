@@ -28,6 +28,7 @@
 
 - (void)initSubviews
 {
+//    self.backgroundColor = [UIColor orangeColor];
     _redLine = [UIView new];
     _redLine.backgroundColor = [UIColor titleColor];
     _label = [UILabel new];

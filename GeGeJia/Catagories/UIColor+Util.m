@@ -18,6 +18,10 @@
 {
     return [UIColor colorWithRed:255/255.0f  green:255/255.0f  blue:255/255.0f alpha:1.0f];
 }
++ (UIColor *)moneyColor
+{
+    return [UIColor colorWithRed:207/255.0f  green:52/255.0f  blue:41/255.0f alpha:1.0f];
+}
 + (UIColor *)colorWithHex:(int)hexValue alpha:(CGFloat)alpha
 {
     return [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0
