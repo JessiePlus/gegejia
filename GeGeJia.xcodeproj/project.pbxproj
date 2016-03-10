@@ -15,6 +15,7 @@
 		D611C3A51C906CF2003EE906 /* DoubleLineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A21C906CF1003EE906 /* DoubleLineGridCell.m */; };
 		D611C3A61C906CF2003EE906 /* SingleLineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */; };
 		D611C3A91C907CE3003EE906 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A81C907CE3003EE906 /* LoginCell.m */; };
+		D611C3AC1C911EAD003EE906 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3AB1C911EAD003EE906 /* SettingsViewController.m */; };
 		D68B19571C79D07D001D6AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19561C79D07D001D6AF9 /* main.m */; };
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
@@ -90,6 +91,8 @@
 		D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLineGridCell.m; sourceTree = "<group>"; };
 		D611C3A71C907CE3003EE906 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
 		D611C3A81C907CE3003EE906 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
+		D611C3AA1C911EAD003EE906 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D611C3AB1C911EAD003EE906 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D68B19521C79D07D001D6AF9 /* GeGeJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeGeJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B19561C79D07D001D6AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D68B19661C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				D611C3A21C906CF1003EE906 /* DoubleLineGridCell.m */,
 				D611C39E1C900B60003EE906 /* GridItem.h */,
 				D611C39F1C900B60003EE906 /* GridItem.m */,
+				D611C3AA1C911EAD003EE906 /* SettingsViewController.h */,
+				D611C3AB1C911EAD003EE906 /* SettingsViewController.m */,
 				D611C3A31C906CF1003EE906 /* SingleLineGridCell.h */,
 				D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */,
 				D68B19921C79D19D001D6AF9 /* UserViewController.h */,
@@ -680,6 +685,7 @@
 				D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */,
 				D68B19E61C7C8A3B001D6AF9 /* MaternalAndChildTableViewController.m in Sources */,
 				D68B1A0C1C832E7A001D6AF9 /* CAPSPageMenu.m in Sources */,
+				D611C3AC1C911EAD003EE906 /* SettingsViewController.m in Sources */,
 				D68B19EC1C7C8B23001D6AF9 /* RightNowTableViewController.m in Sources */,
 				D68B1A4F1C8C6C37001D6AF9 /* ActivityCell.m in Sources */,
 				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,

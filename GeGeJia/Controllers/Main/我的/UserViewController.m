@@ -15,6 +15,10 @@
 #import "DoubleLineGridCell.h"
 #import "GridItem.h"
 #import "LoginViewController.h"
+#import "SettingsViewController.h"
+#import "RegisterViewController.h"
+
+
 
 static NSString *const kCell = @"CellID";
 static NSString *const kSingleLineGridViewCell = @"kSingleLineGridViewCellID";
@@ -65,6 +69,7 @@ static NSString *const kDoubleLineGridViewCell = @"kDoubleLineGridViewCellID";
     UIButton *regis = [UIButton new];
     [regis setTitle:@"注册" forState:UIControlStateNormal];
     [regis setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [regis addTarget:self action:@selector(regisBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     regis.layer.borderWidth  = 1.0f;
     regis.layer.borderColor  = [UIColor whiteColor].CGColor;
     regis.layer.cornerRadius = 2.0f;
@@ -105,8 +110,9 @@ static NSString *const kDoubleLineGridViewCell = @"kDoubleLineGridViewCellID";
 }
 - (void)pushSettingViewController
 {
-    NSLog(@"%d", __LINE__);
-    //[self.navigationController pushViewController:[SearchViewController new] animated:YES];
+    SettingsViewController *settings = [SettingsViewController new];
+    settings.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:settings animated:NO];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -189,7 +195,14 @@ static NSString *const kDoubleLineGridViewCell = @"kDoubleLineGridViewCellID";
 
 - (void)loginBtnClicked:(id)sender {
     LoginViewController *loginVC = [LoginViewController new];
+    loginVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (void)regisBtnClicked:(id)sender {
+    RegisterViewController *regisVC = [RegisterViewController new];
+    regisVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:regisVC animated:NO];
 }
 
 @end
