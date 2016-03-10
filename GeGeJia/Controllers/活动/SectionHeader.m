@@ -6,16 +6,16 @@
 //  Copyright © 2016年 dinglin. All rights reserved.
 //
 
-#import "Header.h"
+#import "SectionHeader.h"
 #import <Masonry.h>
 #import "UIColor+Util.h"
 
-@interface Header () {
+@interface SectionHeader () {
 }
 @property (nonatomic) UIView *redLine;
 @end
 
-@implementation Header
+@implementation SectionHeader
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

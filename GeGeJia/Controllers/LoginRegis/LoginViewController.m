@@ -27,13 +27,14 @@ static NSString *const kCell = @"CellID";
     [super viewDidLoad];
 
     self.navigationItem.title = @"登录";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"快速注册" style:UIBarButtonItemStylePlain target:self action:@selector(pushRegisViewController)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"快速注册" style:UIBarButtonItemStylePlain target:self action:@selector(pushRegisViewController:)];
     
 //    self.view.backgroundColor = [UIColor lineColor];
-    UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds];
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, self.view.bounds.size.width, self.view.bounds.size.height)];
     table.dataSource = self;
     table.delegate = self;
-    
+    table.backgroundColor = [UIColor lineColor];
+
     [table registerClass:[LoginCell class] forCellReuseIdentifier:kCell];
 
     
@@ -147,10 +148,7 @@ static NSString *const kCell = @"CellID";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 10;
-    } else
-        return 80;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -168,6 +166,10 @@ static NSString *const kCell = @"CellID";
     }
 
     return cell;
+}
+
+-(void)pushRegisViewController: (id)sender {
+    NSLog(@"%d", __LINE__);
 }
 
 @end

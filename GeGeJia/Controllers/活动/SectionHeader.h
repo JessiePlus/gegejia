@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Header : UICollectionReusableView
+@interface SectionHeader : UICollectionReusableView
 @property (nonatomic) UILabel *label;
 
 @end

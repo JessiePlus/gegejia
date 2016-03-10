@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80ED6F163C24409904DA1971 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6E5AD3EDFDE6839F518843 /* libPods.a */; };
-		D611C38F1C8F2181003EE906 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C38E1C8F2181003EE906 /* Header.m */; };
+		D611C38F1C8F2181003EE906 /* SectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C38E1C8F2181003EE906 /* SectionHeader.m */; };
 		D611C3961C8FAA91003EE906 /* TodayHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3951C8FAA91003EE906 /* TodayHotCell.m */; };
 		D611C3991C8FB916003EE906 /* TodayHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3981C8FB916003EE906 /* TodayHotView.m */; };
 		D611C3A01C900B60003EE906 /* GridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C39F1C900B60003EE906 /* GridItem.m */; };
@@ -16,6 +16,7 @@
 		D611C3A61C906CF2003EE906 /* SingleLineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A41C906CF1003EE906 /* SingleLineGridCell.m */; };
 		D611C3A91C907CE3003EE906 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3A81C907CE3003EE906 /* LoginCell.m */; };
 		D611C3AC1C911EAD003EE906 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3AB1C911EAD003EE906 /* SettingsViewController.m */; };
+		D611C3AF1C91413E003EE906 /* BannersView.m in Sources */ = {isa = PBXBuildFile; fileRef = D611C3AE1C91413E003EE906 /* BannersView.m */; };
 		D68B19571C79D07D001D6AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B19561C79D07D001D6AF9 /* main.m */; };
 		D68B19701C79D07D001D6AF9 /* GeGeJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B196F1C79D07D001D6AF9 /* GeGeJiaTests.m */; };
 		D68B197B1C79D07D001D6AF9 /* GeGeJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B197A1C79D07D001D6AF9 /* GeGeJiaUITests.m */; };
@@ -51,8 +52,6 @@
 		D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A341C888025001D6AF9 /* HomePageHotList.m */; };
 		D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */; };
 		D68B1A401C888025001D6AF9 /* HomePageNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A381C888025001D6AF9 /* HomePageNSObject.m */; };
-		D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A431C8C15C9001D6AF9 /* BannerCell.m */; };
-		D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A461C8C2A63001D6AF9 /* BannerView.m */; };
 		D68B1A4B1C8C5C3D001D6AF9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */; };
 		D68B1A4F1C8C6C37001D6AF9 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */; };
 /* End PBXBuildFile section */
@@ -77,8 +76,8 @@
 /* Begin PBXFileReference section */
 		7E6E5AD3EDFDE6839F518843 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		892D5667FBF478EA38543B2A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		D611C38D1C8F2181003EE906 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		D611C38E1C8F2181003EE906 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		D611C38D1C8F2181003EE906 /* SectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeader.h; sourceTree = "<group>"; };
+		D611C38E1C8F2181003EE906 /* SectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeader.m; sourceTree = "<group>"; };
 		D611C3941C8FAA91003EE906 /* TodayHotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotCell.h; sourceTree = "<group>"; };
 		D611C3951C8FAA91003EE906 /* TodayHotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayHotCell.m; sourceTree = "<group>"; };
 		D611C3971C8FB916003EE906 /* TodayHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotView.h; sourceTree = "<group>"; };
@@ -93,6 +92,8 @@
 		D611C3A81C907CE3003EE906 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		D611C3AA1C911EAD003EE906 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D611C3AB1C911EAD003EE906 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D611C3AD1C91413E003EE906 /* BannersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannersView.h; sourceTree = "<group>"; };
+		D611C3AE1C91413E003EE906 /* BannersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannersView.m; sourceTree = "<group>"; };
 		D68B19521C79D07D001D6AF9 /* GeGeJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeGeJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B19561C79D07D001D6AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D68B19661C79D07D001D6AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,10 +164,6 @@
 		D68B1A361C888025001D6AF9 /* HomePageNowGegeRecommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNowGegeRecommend.m; sourceTree = "<group>"; };
 		D68B1A371C888025001D6AF9 /* HomePageNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageNSObject.h; sourceTree = "<group>"; };
 		D68B1A381C888025001D6AF9 /* HomePageNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageNSObject.m; sourceTree = "<group>"; };
-		D68B1A421C8C15C9001D6AF9 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
-		D68B1A431C8C15C9001D6AF9 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
-		D68B1A451C8C2A63001D6AF9 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
-		D68B1A461C8C2A63001D6AF9 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		D68B1A491C8C5C3D001D6AF9 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		D68B1A4A1C8C5C3D001D6AF9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
@@ -358,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				D68B19D21C7B4840001D6AF9 /* Home */,
-				D68B1A191C8493E5001D6AF9 /* LoginAndRegister */,
+				D68B1A191C8493E5001D6AF9 /* LoginRegis */,
 				D68B19B41C7A0592001D6AF9 /* Main */,
 				D68B1A091C832E7A001D6AF9 /* PageMenu */,
 				D611C3901C8FA978003EE906 /* 今日最热 */,
@@ -411,7 +408,7 @@
 			path = PageMenu;
 			sourceTree = "<group>";
 		};
-		D68B1A191C8493E5001D6AF9 /* LoginAndRegister */ = {
+		D68B1A191C8493E5001D6AF9 /* LoginRegis */ = {
 			isa = PBXGroup;
 			children = (
 				D611C3A71C907CE3003EE906 /* LoginCell.h */,
@@ -421,7 +418,7 @@
 				D68B1A1A1C84941E001D6AF9 /* RegisterViewController.h */,
 				D68B1A1B1C84941E001D6AF9 /* RegisterViewController.m */,
 			);
-			path = LoginAndRegister;
+			path = LoginRegis;
 			sourceTree = "<group>";
 		};
 		D68B1A231C85E906001D6AF9 /* Resources */ = {
@@ -466,10 +463,8 @@
 		D68B1A481C8C5407001D6AF9 /* 滚动广告 */ = {
 			isa = PBXGroup;
 			children = (
-				D68B1A421C8C15C9001D6AF9 /* BannerCell.h */,
-				D68B1A431C8C15C9001D6AF9 /* BannerCell.m */,
-				D68B1A451C8C2A63001D6AF9 /* BannerView.h */,
-				D68B1A461C8C2A63001D6AF9 /* BannerView.m */,
+				D611C3AD1C91413E003EE906 /* BannersView.h */,
+				D611C3AE1C91413E003EE906 /* BannersView.m */,
 			);
 			path = "滚动广告";
 			sourceTree = "<group>";
@@ -479,8 +474,8 @@
 			children = (
 				D68B1A4D1C8C6C37001D6AF9 /* ActivityCell.h */,
 				D68B1A4E1C8C6C37001D6AF9 /* ActivityCell.m */,
-				D611C38D1C8F2181003EE906 /* Header.h */,
-				D611C38E1C8F2181003EE906 /* Header.m */,
+				D611C38D1C8F2181003EE906 /* SectionHeader.h */,
+				D611C38E1C8F2181003EE906 /* SectionHeader.m */,
 			);
 			path = "活动";
 			sourceTree = "<group>";
@@ -674,12 +669,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D68B19941C79D19D001D6AF9 /* CartViewController.m in Sources */,
-				D611C38F1C8F2181003EE906 /* Header.m in Sources */,
+				D611C38F1C8F2181003EE906 /* SectionHeader.m in Sources */,
 				D611C3A01C900B60003EE906 /* GridItem.m in Sources */,
 				D68B198A1C79D107001D6AF9 /* AppDelegate.m in Sources */,
 				D68B19571C79D07D001D6AF9 /* main.m in Sources */,
 				D611C3A61C906CF2003EE906 /* SingleLineGridCell.m in Sources */,
-				D68B1A441C8C15C9001D6AF9 /* BannerCell.m in Sources */,
 				D68B1A3E1C888025001D6AF9 /* HomePageHotList.m in Sources */,
 				D68B1A181C84928D001D6AF9 /* LoginViewController.m in Sources */,
 				D68B1A391C888025001D6AF9 /* BaseNSObject.m in Sources */,
@@ -691,7 +685,6 @@
 				D68B1A3F1C888025001D6AF9 /* HomePageNowGegeRecommend.m in Sources */,
 				D68B199F1C79D1FC001D6AF9 /* Utils.m in Sources */,
 				D68B1A3B1C888025001D6AF9 /* HomePageActivityList.m in Sources */,
-				D68B1A471C8C2A63001D6AF9 /* BannerView.m in Sources */,
 				D68B1A1F1C854E09001D6AF9 /* AFHTTPSessionManager+Util.m in Sources */,
 				D611C3A91C907CE3003EE906 /* LoginCell.m in Sources */,
 				D68B1A1C1C84941E001D6AF9 /* RegisterViewController.m in Sources */,
@@ -709,6 +702,7 @@
 				D68B1A0F1C8330C0001D6AF9 /* HomePageViewController.m in Sources */,
 				D68B199E1C79D1FC001D6AF9 /* LocalizeHelper.m in Sources */,
 				D68B1A3D1C888025001D6AF9 /* HomePageContent.m in Sources */,
+				D611C3AF1C91413E003EE906 /* BannersView.m in Sources */,
 				D68B19951C79D19D001D6AF9 /* HomeViewController.m in Sources */,
 				D68B19961C79D19D001D6AF9 /* MallViewController.m in Sources */,
 				D68B1A3C1C888025001D6AF9 /* HomePageBannerList.m in Sources */,

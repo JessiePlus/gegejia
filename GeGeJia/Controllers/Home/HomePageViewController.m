@@ -12,17 +12,19 @@
 #import <AFHTTPSessionManager.h>
 #import "DataModels.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "BannerView.h"
 #import "ActivityCell.h"
-#import "Header.h"
+#import "SectionHeader.h"
 #import "TodayHotView.h"
+#import "BannersView.h"
 
 
 static NSString *const kCellID = @"CellID";
 static NSString *const kActivityCellID = @"ActivityCellID";
 static NSString *const kTodayHotCellID = @"TodayHotCellID";
-static NSString *const kCollectionViewHeaderIndentifier = @"CollectionViewHeaderID";
-static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooterID";
+static NSString *const kCollectionViewSectionHeaderIndentifier = @"CollectionViewSectionHeaderID";
+static NSString *const kCollectionViewSectionFooterIndentifier = @"CollectionViewSectionFooterID";
+static NSString *const kBannersCellID = @"BannersCellID";
+
 #define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
 #define kSCREENFACTOR (kSCREENWIDTH/710.0f)
 
@@ -34,7 +36,7 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 
 //内容
 @property (nonatomic) UICollectionView *mainView;//主视图
-//@property (nonatomic) BannerView *banner;
+@property (nonatomic) NSMutableArray *bannerList;
 @property (nonatomic) NSArray *hotList;
 @property (nonatomic) NSArray *activityList;
 
@@ -46,7 +48,7 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
     [super viewDidLoad];
 
     
-    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     //1.
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.minimumInteritemSpacing = 0.0f;
@@ -56,7 +58,9 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
     _mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     [_mainView registerClass:[ActivityCell class] forCellWithReuseIdentifier:kActivityCellID];
     [_mainView registerClass:[TodayHotView class] forCellWithReuseIdentifier:kTodayHotCellID];
-    [_mainView registerClass:[Header class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionViewHeaderIndentifier];
+    [_mainView registerClass:[BannersView class] forCellWithReuseIdentifier:kBannersCellID];
+    [_mainView registerClass:[SectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionViewSectionHeaderIndentifier];
+//    [_mainView registerClass:[SectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionViewHeaderIndentifier];
     
     _mainView.delegate = self;
     _mainView.dataSource = self;
@@ -101,8 +105,14 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
         HomePageNSObject *homePage = [HomePageNSObject modelObjectWithDictionary:paramDic];
         
         //广告板
-//        _banner.bannerList = homePage.bannerList;
-   
+        _bannerList = [NSMutableArray new];
+        
+        for (NSUInteger i = 0; i < homePage.bannerList.count; i ++) {
+//            NSLog(@"%@", ((HomePageBannerList *)(homePage.bannerList[i])).image);
+            [_bannerList addObject:((HomePageBannerList *)(homePage.bannerList[i])).image];
+        }
+        
+//        NSLog(@"%@", _bannerList);
 //        for (HomePageActivityList *activityList in homePage.activityList) {
 //            NSLog(@"%@", activityList.title);
 //            
@@ -135,21 +145,32 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
-    if (indexPath.section < _activityList.count) {
-        size = CGSizeMake([((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).width floatValue]*kSCREENFACTOR, [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).height floatValue]*kSCREENFACTOR);
-    } else if (indexPath.section == _activityList.count){
-        size = CGSizeMake(kSCREENWIDTH, 200);
+    
+    if (indexPath.section == 0) {
+        size = CGSizeMake(kSCREENWIDTH, 150);
     }
+    if ((indexPath.section >= 1) && (indexPath.section <= _activityList.count)) {
+        size = CGSizeMake(\
+                          [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section-1]).content[indexPath.row]).width floatValue]*kSCREENFACTOR, \
+                          [((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section-1]).content[indexPath.row]).height floatValue]*kSCREENFACTOR);
+    }
+    if (indexPath.section > _activityList.count) {
+        size = CGSizeMake(kSCREENWIDTH, 150);
+    }
+    
     return size;
-    
-    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    if (section < _activityList.count) {
-        return [((HomePageActivityList *)_activityList[section]).content count];
-    } else if (section == _activityList.count){
+    
+    if (section == 0) {
+        return 1;
+    }
+    if ((section >= 1) && (section <= _activityList.count)) {
+        return [((HomePageActivityList *)_activityList[section-1]).content count];
+    }
+    if (section == _activityList.count + 1){
         return 1;
     } else {
         return 0;
@@ -158,14 +179,25 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section < _activityList.count) {
+    
+    if (indexPath.section == 0) {
+        BannersView *cell =
+        (BannersView *)[collectionView dequeueReusableCellWithReuseIdentifier:kBannersCellID
+                                                                  forIndexPath:indexPath];
+        cell.imagesURLStrings = _bannerList;
+        
+        return cell;
+    }
+
+    if ((indexPath.section >= 1) && (indexPath.section <= _activityList.count)) {
         ActivityCell *cell =
         (ActivityCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kActivityCellID
                                                                   forIndexPath:indexPath];
-        [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section]).content[indexPath.row]).image] placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
+        [cell.image sd_setImageWithURL:[NSURL URLWithString:((HomePageContent *)((HomePageActivityList *)_activityList[indexPath.section-1]).content[indexPath.row]).image] placeholderImage:[UIImage imageNamed:@"home_default_goods"]];
         
         return cell;
-    } else if (indexPath.section == _activityList.count){
+    }
+    if (indexPath.section == _activityList.count + 1){
         TodayHotView *cell =
         (TodayHotView *)[collectionView dequeueReusableCellWithReuseIdentifier:kTodayHotCellID
                                                                   forIndexPath:indexPath];
@@ -179,23 +211,27 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return ([_activityList count] + ((_hotList.count > 0)?1:0));
+    return (1 + [_activityList count] + ((_hotList.count > 0)?1:0));
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
           viewForSupplementaryElementOfKind:(NSString *)kind
                                 atIndexPath:(NSIndexPath *)indexPath{
 
-    NSString *resueIndentifier = kCollectionViewHeaderIndentifier;
+    NSString *resueIndentifier = kCollectionViewSectionHeaderIndentifier;
     if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
-        resueIndentifier = kCollectionViewFooterIndentifier;
+        resueIndentifier = kCollectionViewSectionFooterIndentifier;
     }
     UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:resueIndentifier forIndexPath:indexPath];
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        Header *header = (Header *)view;
-        if (indexPath.section < _activityList.count) {
-            header.label.text = ((HomePageActivityList *)_activityList[indexPath.section]).title;
-        } else if (indexPath.section == _activityList.count) {
+        SectionHeader *header = (SectionHeader *)view;
+        if (indexPath.section == 0) {
+            header.label.text = @"今日最热";
+        }
+        if ((indexPath.section >= 1) && (indexPath.section <= _activityList.count)) {
+            header.label.text = ((HomePageActivityList *)_activityList[indexPath.section-1]).title;
+        }
+        if (indexPath.section == _activityList.count+1) {
             header.label.text = @"今日最热";
         }
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
@@ -208,13 +244,18 @@ static NSString *const kCollectionViewFooterIndentifier = @"CollectionViewFooter
                   layout:(UICollectionViewLayout *) collectionViewLayout
 referenceSizeForHeaderInSection:(NSInteger) section
 {
-    if (section < _activityList.count) {
-        if (((HomePageActivityList *)_activityList[section]).title.length == 0) {
+    
+    if (section == 0) {
+        return CGSizeZero;
+    }
+    if ((section >= 1) && (section <= _activityList.count)) {
+        if (((HomePageActivityList *)_activityList[section-1]).title.length == 0) {
             return CGSizeZero;
         } else {
             return CGSizeMake(kSCREENWIDTH, 20.0f);
         }
-    } else if (section == _activityList.count) {
+    }
+    if (section == _activityList.count+1) {
         return CGSizeMake(kSCREENWIDTH, 20.0f);
     } else {
         return CGSizeZero;
